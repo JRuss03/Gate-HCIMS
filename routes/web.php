@@ -21,6 +21,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+Route::get('/users/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+Route::get('/users/add', [App\Http\Controllers\UserController::class, 'add'])->name('users.add');
+Route::get('/users/manage-account', [App\Http\Controllers\UserController::class, 'manage'])->name('users.manage');
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
