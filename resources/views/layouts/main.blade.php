@@ -54,21 +54,21 @@
                     </li>
     
                     <ul class="menu-links">
-                        <li class="nav-link" data-tippy-content="Dashboard" data-tippy-arrow="false">
+                        <li class="nav-link link" data-tippy-content="Dashboard" data-tippy-arrow="false">
                             <a href="/dashboard">
                                 <i class='bx bx-grid-alt icon'></i>
                                 <span class="text nav-text">Dashboard</span>
                             </a>
                         </li>
     
-                        <li class="nav-link" data-tippy-content="Residents" data-tippy-arrow="false">
-                            <a href="#">
+                        <li class="nav-link link" data-tippy-content="Residents" data-tippy-arrow="false">
+                            <a href="{{ route('residents.index') }}">
                                 <i class='bx bx-group icon'></i>
                                 <span class="text nav-text">Residents</span>
                             </a>
                         </li>
 
-                        <li class="nav-link" data-tippy-content="Users" data-tippy-arrow="false">
+                        <li class="nav-link link" data-tippy-content="Users" data-tippy-arrow="false">
                             <a href="{{ route('users.index') }}">
                                 <i class='bx bx-user icon'></i>
                                 <span class="text nav-text">Users</span>
@@ -175,6 +175,36 @@
                         right: 1
                     }
                 });
+
+                $('#pregnant-tbl').DataTable({
+                    scrollX: true,
+                    fixedColumns: {
+                        left: 0,
+                        right: 1
+                    }
+                });
+
+                $('#senior-tbl').DataTable({
+                    scrollX: true,
+                    fixedColumns: {
+                        left: 0,
+                        right: 1
+                    }
+                });
+
+                $('#baby-tbl').DataTable({
+                    scrollX: true,
+                    fixedColumns: {
+                        left: 0,
+                        right: 1
+                    }
+                });
+
+                $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function(e){
+                    $($.fn.dataTable.tables(true)).DataTable()
+                        .columns.adjust()
+                        .responsive.recalc();
+                }); 
                 
                 //Sidebar
                 const body = document.querySelector('body'),
@@ -211,7 +241,7 @@
                 theme: 'delete',
                 animation: 'myAnimation',
             });
-            tippy('.nav-link', {
+            tippy('.link', {
                 content: 'Global content',
                 theme: 'myTheme',
                 animation: 'myAnimation2',
@@ -224,6 +254,8 @@
                 placement: 'right',
             });
         </script>
+
+        @yield('page-scripts')
         
     </body>
 

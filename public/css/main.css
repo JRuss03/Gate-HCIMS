@@ -486,7 +486,7 @@ body.dark .home .text{
     color: #fff;
 }
 
-.btn-add {
+.btn-add, .title {
     background-color: var(--accent-color);
     color: #fff;
 
@@ -523,6 +523,10 @@ body.dark .home .text{
 label, .form-control {
     font-size: 12px;
     font-weight: bold;
+}
+
+.form-row {
+    margin-top: 1.5rem;
 }
 
 /* DataTable */
@@ -607,4 +611,25 @@ th, td, .dataTables_length, .form-select, .dataTables_info, .paginate_button {
     border-radius: 100%;
 
     margin-right: 3rem;
+}
+
+span, p {
+    font-size: 12px;
+}
+
+.file-icon {
+    font-size: 3rem;
+
+    padding: 10px !important;
+
+    background-color: var(--primary-color);
+    color: var(--readTextColor);
+
+    border-radius: 50% !important;
+
+    min-width: 40px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
