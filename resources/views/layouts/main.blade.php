@@ -70,6 +70,13 @@
                         </a>
                     </li>
 
+                    <li class="nav-link link {{ (request()->segment(1) == 'checkup-forms') ? 'nav-active' : '' }}" data-tippy-content="Check-up Forms" data-tippy-arrow="false">
+                        <a href="{{ route('checkup-forms.index') }}">
+                            <i class='bx bx-file icon'></i>
+                            <span class="text nav-text">Check-up Forms</span>
+                        </a>
+                    </li>
+
                     <li class="nav-link link {{ (request()->segment(1) == 'users') ? 'nav-active' : '' }}" data-tippy-content="Users" data-tippy-arrow="false">
                         <a href="{{ route('users.index') }}">
                             <i class='bx bx-user icon'></i>

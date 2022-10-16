@@ -393,7 +393,9 @@ body.dark .home .text{
 }
 
 .index-contents {
-    height: 100vh;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+
 }
 
 .card {

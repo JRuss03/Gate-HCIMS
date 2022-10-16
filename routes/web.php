@@ -45,6 +45,15 @@ Route::get('/residents/add', [App\Http\Controllers\ResidentController::class, 'a
 
 // End of Resident
 
+// Check-up Forms
+Route::get('/checkup-forms', [App\Http\Controllers\FormController::class, 'index'])->name('checkup-forms.index');
+
+    // Prenatal 
+    Route::get('/checkup-forms/prenatal/list', [App\Http\Controllers\FormController::class, 'prenatal_list'])->name('checkup-forms.prenatal.list');
+    Route::get('/checkup-forms/prenatal/add', [App\Http\Controllers\FormController::class, 'prenatal_add'])->name('checkup-forms.prenatal.add');
+
+// End of Check-up Forms
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

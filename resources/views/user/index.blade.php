@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="index-contents d-flex align-items-center justify-content-center">
+    <div class="index-contents d-flex justify-content-center">
         <div class="col-lg-10">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
