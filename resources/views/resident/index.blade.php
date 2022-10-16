@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Users')
+@section('title', 'Residents')
 
 @section('content')
 
@@ -20,21 +20,21 @@
                 <div class="card-body">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="btn-add d-flex align-items-center" id="pregnant-tab" data-bs-toggle="tab" href="#pregnant"
+                            <a class="tab active d-flex align-items-center" id="pregnant-tab" data-bs-toggle="tab" href="#pregnant"
                                 role="tab" aria-controls="other" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
                                 Pregnant
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn-add d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
+                            <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
                                 Senior Citizen
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn-add d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
+                            <a class="tab d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
                                 role="tab" aria-controls="hospital" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
                                 Baby
@@ -53,8 +53,8 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Age</th>
-                                                <th>Last Menstration</th>
-                                                <th>Probable birth date</th>
+                                                <th>Last Menstruation</th>
+                                                <th>Probable Birth Date</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -72,7 +72,7 @@
                                                         <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
                                                     </a>
 
-                                                    <a href="{{ route('users.edit') }}">
+                                                    <a href="{{ route('resident.pregnant.edit') }}">
                                                         <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
                                                     </a>
                 
@@ -92,39 +92,26 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Position</th>
+                                                <th>Age</th>
+                                                <th>Birthday</th>
+                                                <th>Guardian</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="td-content">
-                                                    Juan Dela Cruz
-                                                </td>
-                                                <td class="td-content">jjdelacruz</td>
-                                                <td class="td-content">delacruz.juan@gmail.com</td>
-                                                <td class="td-content">Administrator</td>
-                                                <td>
-                                                    <a href="{{ route('users.edit') }}">
-                                                        <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
-                                                    </a>
-                
-                                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
-                                                        <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="td-content">
                                                     Melchora Aquino
                                                 </td>
-                                                <td class="td-content">maquino</td>
-                                                <td class="td-content">aquino.melchora@gmail.com</td>
-                                                <td class="td-content">BNS</td>
+                                                <td class="td-content">72</td>
+                                                <td class="td-content">Aug. 27, 1950</td>
+                                                <td class="td-content">Juan Dela Cruz</td>
                                                 <td>
-                                                    <a href="{{ route('users.edit') }}">
+                                                    <a href="{{ route('resident.senior.show') }}">
+                                                        <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
+                                                    </a>
+
+                                                    <a href="{{ route('resident.senior.edit') }}">
                                                         <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false" ></i>
                                                     </a>
                 
@@ -144,40 +131,29 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Position</th>
+                                                <th>Age</th>
+                                                <th>Birthday</th>
+                                                <th>Mother's Name</th>
+                                                <th>Father's Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="td-content">
-                                                    Juan Dela Cruz
+                                                    Maria Dela Cruz
                                                 </td>
-                                                <td class="td-content">jjdelacruz</td>
-                                                <td class="td-content">delacruz.juan@gmail.com</td>
-                                                <td class="td-content">Administrator</td>
+                                                <td class="td-content">5</td>
+                                                <td class="td-content">Jan. 1, 2017</td>
+                                                <td class="td-content">Juana Dela Cruz</td>
+                                                <td class="td-content">Juan Dela Cruz</td>
                                                 <td>
-                                                    <a href="{{ route('users.edit') }}">
+                                                    <a href="{{ route('resident.baby.show') }}">
+                                                        <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
+                                                    </a>
+
+                                                    <a href="{{ route('resident.baby.edit') }}">
                                                         <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
-                                                    </a>
-                
-                                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
-                                                        <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="td-content">
-                                                    Melchora Aquino
-                                                </td>
-                                                <td class="td-content">maquino</td>
-                                                <td class="td-content">aquino.melchora@gmail.com</td>
-                                                <td class="td-content">BNS</td>
-                                                <td>
-                                                    <a href="{{ route('users.edit') }}">
-                                                        <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false" ></i>
                                                     </a>
                 
                                                     <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">

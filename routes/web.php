@@ -33,6 +33,15 @@ Route::get('/residents/add', [App\Http\Controllers\ResidentController::class, 'a
 
     // Pregnant
     Route::get('/residents/pregnant', [App\Http\Controllers\ResidentController::class, 'pregnant_show'])->name('resident.pregnant.show');
+    Route::get('/residents/pregnant/edit', [App\Http\Controllers\ResidentController::class, 'pregnant_edit'])->name('resident.pregnant.edit');
+
+    // Senior
+    Route::get('/residents/senior', [App\Http\Controllers\ResidentController::class, 'senior_show'])->name('resident.senior.show');
+    Route::get('/residents/senior/edit', [App\Http\Controllers\ResidentController::class, 'senior_edit'])->name('resident.senior.edit');
+
+    // Baby
+    Route::get('/residents/baby', [App\Http\Controllers\ResidentController::class, 'baby_show'])->name('resident.baby.show');
+    Route::get('/residents/baby/edit', [App\Http\Controllers\ResidentController::class, 'baby_edit'])->name('resident.baby.edit');
 
 // End of Resident
 

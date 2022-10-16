@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Resident Details - Juana Dela Cruz')
+@section('title', 'Resident Details - Melchora Aquino')
     
 @section('content')
     
@@ -17,65 +17,37 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-row">
-                            <h4><strong>Juana Dela Cruz</strong></h4>
+                            <h4><strong>Melchora Aquino</strong></h4>
                             <div class="d-flex align-items-center">
                                 <span class="d-flex align-items-center">
                                     <i class='bx bx-time-five'></i>
-                                    <span class="ms-2">Age: 28</span>
+                                    <span class="ms-2">Age: 72</span>
                                 </span>
                                 <span class="d-flex align-items-center ms-3">
-                                    <i class='bx bx-user'></i>
-                                    <span class="ms-2">Children: 2</span>
+                                    <i class='bx bx-cake'></i>
+                                    <span class="ms-2">Birthday: Aug. 27, 1950</span>
                                 </span>
                             </div>
                         </div>
                         <div class="form-row">
                             <span class="d-flex align-items-center">
-                                <i class='bx bx-calendar'></i>
-                                <span class="ms-2">Last menstration: Feb. 14, 2022</span>
-                            </span>
-                            <span class="d-flex align-items-center">
-                                <i class='bx bx-calendar'></i>
-                                <span class="ms-2">Probable birth date: Dec. 22, 2022</span>
+                                <i class='bx bx-map'></i>
+                                <span class="ms-2">Purok: 2</span>
                             </span>
                         </div>
                         <div class="form-row">
-                            <h6><strong>Children</strong></h6>
+                            <h6><strong>Guardian</strong></h6>
                             <div class="row">
                                 <div class="d-flex align-items-center">
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-user'></i>
-                                        <span class="ms-2">Pedro Dela Cruz</span>
+                                        <span class="ms-2">Juan Dela Cruz</span>
                                     </span>
                                     <span class="d-flex align-items-center ms-3">
-                                        <i class='bx bx-time-five'></i>
-                                        <span class="ms-2">Age: 10</span>
+                                        <i class='bx bx-phone'></i>
+                                        <span class="ms-2">0928 818 8819</span>
                                     </span>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <span class="d-flex align-items-center">
-                                        <i class='bx bx-user'></i>
-                                        <span class="ms-2">Maria Dela Cruz</span>
-                                    </span>
-                                    <span class="d-flex align-items-center ms-3">
-                                        <i class='bx bx-time-five'></i>
-                                        <span class="ms-2">Age: 5</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <h6><strong>Problem w/ other births</strong></h6>
-                            {{-- <div class="row">
-                                <p>Anemia</p>
-                            </div> --}}
-                            <div class="row">
-                                <span class="d-flex align-items-center">
-                                    <i class='bx bx-info-circle'></i>
-                                    <span class="ms-2">No Problems Indicated</span>
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -98,7 +70,7 @@
                                     <i class='bx bx-file'></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6><strong>Prenatal Checkup March</strong></h6>
+                                    <h6><strong>Check Form</strong></h6>
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-calendar'></i>
                                         <span class="ms-2">Mar. 22, 2022</span>

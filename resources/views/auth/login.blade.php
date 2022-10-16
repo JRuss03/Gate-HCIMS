@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('title', 'Gate - HCIMS')
+
 @section('content')
 {{-- <div class="container">
     <div class="row justify-content-center">
@@ -76,9 +78,9 @@
         <div>
             <div class="d-flex align-items-center">
                 <div>
-                    <div class="circle"></div>
+                    <img src="{{ asset('/images/gate seal.png') }}" class="seal" alt="" srcset="">
                 </div>
-                <div>
+                <div class="ms-4">
                     <h4>Brgy. Gate</h4>
                     <h2><strong>Health Center Information Management System</strong></h2>
                 </div>
