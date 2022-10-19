@@ -23,6 +23,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" ref="https://cdn.datatables.net/fixedcolumns/4.0.0/css/fixedColumns.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
+
+    <!-- FullCalendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.css" />
     
     {{-- Local CSS --}}
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
@@ -168,6 +171,13 @@
         src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
     <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    
+    {{-- FullCalendar --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.js"></script>
+
+    {{-- Chart.js --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     {{-- Tippy --}}
     <script src="https://unpkg.com/tippy.js@6"></script>
@@ -224,18 +234,11 @@
                 modeText = body.querySelector(".mode-text");
             toggle.addEventListener("click", () => {
                 sidebar.classList.toggle("close");
-            })
+            });
             searchBtn.addEventListener("click", () => {
                 sidebar.classList.remove("close");
-            })
-            modeSwitch.addEventListener("click", () => {
-                body.classList.toggle("dark");
-                if (body.classList.contains("dark")) {
-                    modeText.innerText = "Light mode";
-                } else {
-                    modeText.innerText = "Dark mode";
-                }
             });
+            
         });
     </script>
 

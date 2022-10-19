@@ -664,3 +664,114 @@ span, p {
     align-items: center;
     justify-content: center;
 }
+
+/* fullCalendar */
+
+.fc-toolbar-title {
+    font-size: 1.3rem !important;
+    font-weight: var(--Bold);
+}
+
+.fc-prev-button,
+.fc-next-button {
+    font-size: 1rem !important;
+
+    padding: 10px !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    margin-left: 1rem !important;
+
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+
+    -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    -moz-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.fc-prev-button:focus,
+.fc-next-button:focus,
+.fc-today-button:focus,
+.fc-dayGridMonth-button:focus,
+.fc-listMonth-button:focus {
+    box-shadow: none !important;
+}
+
+.fc-today-button,
+.fc-dayGridMonth-button,
+.fc-listMonth-button {
+    font-size: 12px !important;
+    font-weight: var(--Bold) !important;
+
+    padding: 10px !important;
+
+    border: none !important;
+
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+
+}
+
+.fc-col-header-cell-cushion,
+.fc-col-header-cell-cushion:hover {
+    font-size: 12px;
+    font-weight: var(--Bold);
+    
+    color: var(--text-color);
+
+    text-decoration: none;
+}
+
+.fc-daygrid-day-top a {
+    font-size: 12px;
+    
+    color: var(--text-color) !important;
+
+    text-decoration: none;
+}
+
+.fc-day-today {
+    border-radius: 10px !important;
+
+    background: var(--sidebar-color) !important;
+
+    border: none !important;
+
+    font-weight: var(--Bold);
+
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+    border: none !important;
+}
+
+.fc .fc-scrollgrid-liquid {
+    border: none !important;
+}
+
+.fc-daygrid-event {
+    font-weight: var(--Bold);
+    font-size: 12px;
+
+    padding: 0rem 0.5rem;
+
+    border: none;
+    border-radius: 30px;
+
+    margin: 0.2rem 0rem !important;
+}
+
+.fc-list-day-text,
+.fc-list-day-side-text,
+.fc-list-event-time,
+.fc-list-event-title,
+.fc-list-day-text:hover,
+.fc-list-day-side-text:hover,
+.fc-list-event-time:hover,
+.fc-list-event-title:hover {
+    font-size: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+}

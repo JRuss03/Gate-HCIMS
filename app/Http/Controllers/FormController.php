@@ -22,4 +22,19 @@ class FormController extends Controller
     {
         return view('forms.prenatal.list');
     }
+
+    public function prenatal_index()
+    {
+        return view('forms.prenatal.index');
+    }
+
+    public function prenatal_show()
+    {
+        return view('forms.prenatal.show');
+    }
+
+    public function prenatal_edit()
+    {
+        return view('forms.prenatal.edit');
+    }
 }

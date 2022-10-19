@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="">
+                                <a href="{{ route('checkup-forms.prenatal.index') }}">
                                     <i class='bx bx-list-ul btn-table btn-edit' data-tippy-content="Index" data-tippy-arrow="false"></i>
                                 </a>
                                 <a href="{{ route('checkup-forms.prenatal.list') }}" class="ms-3">
