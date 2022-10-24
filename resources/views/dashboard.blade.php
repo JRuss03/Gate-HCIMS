@@ -14,7 +14,7 @@
                             <i class='bx bx-user-circle' style="font-size: 4.8rem;"></i>
                         </div>
                         <div class="col-lg-11" style="padding-left: 50px;">
-                            <h2><strong>Juan Dela Cruz</strong></h2>
+                            <h2><strong>{{ Auth::user()->name }}</strong></h2>
                             <h6>System Administrator</h6>
                         </div>
                     </div>

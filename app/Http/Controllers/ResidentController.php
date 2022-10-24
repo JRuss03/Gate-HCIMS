@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Pregnant;
+use App\Models\Senior;
+use App\Models\Baby;
+use App\Http\Controllers\SeniorController;
 class ResidentController extends Controller
 {
     public function index()
     {
-        return view('resident.index');
+        $seniors =Senior::all();
+        $babies =Baby::all();
+        return view('resident.index', compact('seniors','babies'));
     }
 
     public function add()
@@ -22,39 +27,28 @@ class ResidentController extends Controller
     {
         return view('resident.pregnant.show');
     }
-
-    public function pregnant_edit()
-    {
-        return view('resident.pregnant.edit');
-    }
-
+   
     // End of Pregnant
 
     // Senior
 
-    public function senior_show()
+    public function senior_show($id)
     {
-        return view('resident.senior.show');
+        $senior = Senior::findOrFail($id);
+        return view('resident.senior.show', compact('senior'));
     }
 
-    public function senior_edit()
-    {
-        return view('resident.senior.edit');
-    }
 
     // End of Senior
 
     // Baby
 
-    public function baby_show()
+    public function baby_show($id)
     {
-        return view('resident.baby.show');
+        $baby = Baby::findOrFail($id);
+        return view('resident.baby.show', compact('baby'));
     }
 
-    public function baby_edit()
-    {
-        return view('resident.baby.edit');
-    }
 
     // End of Baby
 }

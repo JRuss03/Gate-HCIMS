@@ -1,3 +1,4 @@
+
 @extends('layouts.main')
 
 @section('title', 'Edit Details - Juana Dela Cruz')

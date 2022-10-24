@@ -17,22 +17,22 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-row">
-                            <h4><strong>Maria Dela Cruz</strong></h4>
+                            <h4><strong>{{$baby->name}}</strong></h4>
                             <div class="d-flex align-items-center">
                                 <span class="d-flex align-items-center">
                                     <i class='bx bx-time-five'></i>
-                                    <span class="ms-2">Age: 5</span>
+                                    <span class="ms-2">Age: {{$baby->name}}</span>
                                 </span>
                                 <span class="d-flex align-items-center ms-3">
                                     <i class='bx bx-cake'></i>
-                                    <span class="ms-2">Birthday: Jan. 1, 2017</span>
+                                    <span class="ms-2">Birthday: {{$baby->birthday}}</span>
                                 </span>
                             </div>
                         </div>
                         <div class="form-row">
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-map'></i>
-                                <span class="ms-2">Purok: 2</span>
+                                <span class="ms-2">Purok: {{$baby->purok}}</span>
                             </span>
                         </div>
                         <div class="form-row">
@@ -41,7 +41,7 @@
                                 <div class="d-flex align-items-center">
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-user'></i>
-                                        <span class="ms-2">Mother: Juana Dela Cruz</span>
+                                        <span class="ms-2">Mother: {{$baby->mother_name}}</span>
                                     </span>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 <div class="d-flex align-items-center">
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-user'></i>
-                                        <span class="ms-2">Father: Juan Dela Cruz</span>
+                                        <span class="ms-2">{{$baby->father_name}}</span>
                                     </span>
                                 </div>
                             </div>
@@ -60,11 +60,11 @@
                                 <div class="d-flex align-items-center">
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-user'></i>
-                                        <span class="ms-2">Juan Dela Cruz</span>
+                                        <span class="ms-2">{{$baby->guardian}}</span>
                                     </span>
                                     <span class="d-flex align-items-center ms-3">
                                         <i class='bx bx-phone'></i>
-                                        <span class="ms-2">0928 818 8819</span>
+                                        <span class="ms-2">{{$baby->guardian_contact_no}}</span>
                                     </span>
                                 </div>
                             </div>

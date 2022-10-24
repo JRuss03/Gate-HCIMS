@@ -14,32 +14,42 @@
                     </span>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="{{ route('users.edit-store') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="user_id" value="{{ old('id', $user->id) }}">
                         <div class="form-row row">
                             <div class="col-lg-6 col-md-12 col-xs-12">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" class="form-control">
                             </div>
                             <div class="col-lg-6 col-md-12 col-xs-12">
                                 <label for="username">Username</label>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <input type="text" name="username" id="username" value="{{ old('username', $user->username) }}" class="form-control">
                             </div>
                         </div>
                         <div class="form-row row">
                             <div class="col-lg-6 col-md-12 col-xs-12">
                                 <label for="name">Email</label>
-                                <input type="text" name="email" id="email" class="form-control">
+                                <input type="text" name="email" id="email" value="{{ old('email', $user->email) }}"class="form-control">
                             </div>
                             <div class="col-lg-6 col-md-12 col-xs-12">
                                 <label for="name">Position</label>
-                                <select name="position" id="position" class="form-select">
-                                    <option value="Administrator">Administrator</option>
-                                    <option value="Administrator">BHW</option>
-                                    <option value="Administrator">BNS</option>
-                                    <option value="Administrator">Brgy. Official</option>
-                                </select>
+                                <select name="position" id="position" class="form-control form-select grey">
+                                            
+                                <option value="{{ old('position', $user->position) }}" >{{ $user->position}}</option>
+                                <option value="1">Administrator</option>
+                                <option value="2">BHW</option>
+                                <option value="3">BNS</option>
+                                <option value="4">Brgy. Official</option>
+                                        
+                                        </select>
                             </div>
+                            <div class="form-row row">
+                            <div class="col-lg-6 col-md-12 col-xs-12">
+                                {{--<label for="name">Password</label>--}}
+                                <input type="hidden" name="password" id="password" value="{{ old('password', $user->password) }}"class="form-control">
+                            </div>
+                           
                         </div>
                         <div class="form-row row">
                             <div class="d-flex justify-content-end" style="margin-top: 20px;">

@@ -99,27 +99,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($seniors as $senior)
                                             <tr>
                                                 <td class="td-content">
-                                                    Melchora Aquino
+                                                {{ $senior->name }}
                                                 </td>
-                                                <td class="td-content">72</td>
-                                                <td class="td-content">Aug. 27, 1950</td>
-                                                <td class="td-content">Juan Dela Cruz</td>
+                                                <td class="td-content"> {{ $senior->age }}</td>
+                                                <td class="td-content"> {{ $senior->birthday }}</td>
+                                                <td class="td-content">{{ $senior->guardian }}</td>
                                                 <td>
-                                                    <a href="{{ route('resident.senior.show') }}">
+                                                    <a href="{{ route('resident.senior.show', $senior->id) }}"> 
                                                         <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
                                                     </a>
 
-                                                    <a href="{{ route('resident.senior.edit') }}">
+                                                    <a href="{{ route('senior.edit', $senior->id) }}">
                                                         <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false" ></i>
                                                     </a>
                 
-                                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
+                                                    <a href="{{ route('senior.delete', $senior->id) }}" onclick="return confirm('Are you sure you want to delete the record?')">
                                                         <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
                                                     </a>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -139,28 +141,30 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($babies as $baby)
                                             <tr>
                                                 <td class="td-content">
-                                                    Maria Dela Cruz
+                                                {{ $baby->name }}
                                                 </td>
-                                                <td class="td-content">5</td>
-                                                <td class="td-content">Jan. 1, 2017</td>
-                                                <td class="td-content">Juana Dela Cruz</td>
-                                                <td class="td-content">Juan Dela Cruz</td>
+                                                <td class="td-content"> {{ $baby->age }}</td>
+                                                <td class="td-content"> {{ $baby->birthday }}</td>
+                                                <td class="td-content"> {{ $baby->mother_name }}</td>
+                                                <td class="td-content"> {{ $baby->father_name }}</td>
                                                 <td>
-                                                    <a href="{{ route('resident.baby.show') }}">
+                                                <a href="{{ route('resident.baby.show', $baby->id) }}"> 
                                                         <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
                                                     </a>
 
-                                                    <a href="{{ route('resident.baby.edit') }}">
-                                                        <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
+                                                    <a href="{{ route('baby.edit', $baby->id) }}">
+                                                        <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false" ></i>
                                                     </a>
                 
-                                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
+                                                    <a href="{{ route('baby.delete', $baby->id) }}" onclick="return confirm('Are you sure you want to delete the record?')">
                                                         <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
                                                     </a>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

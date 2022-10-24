@@ -14,7 +14,7 @@
                     </span>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                <form method="POST" action="{{ route('users.register') }}">
                         @csrf
                         <div class="form-row row">
                             <div class="col-lg-6 col-md-12 col-xs-12">
@@ -34,11 +34,17 @@
                             <div class="col-lg-6 col-md-12 col-xs-12">
                                 <label for="name">Position</label>
                                 <select name="position" id="position" class="form-select">
-                                    <option value="Administrator">Administrator</option>
-                                    <option value="Administrator">BHW</option>
-                                    <option value="Administrator">BNS</option>
-                                    <option value="Administrator">Brgy. Official</option>
+                                    <option value="1">Administrator</option>
+                                    <option value="2">BHW</option>
+                                    <option value="3">BNS</option>
+                                    <option value="4">Brgy. Official</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-lg-6 col-md-12 col-xs-12">
+                                <label for="name">Password</label>
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
                         </div>
                         <div class="form-row row">

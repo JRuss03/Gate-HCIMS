@@ -95,7 +95,7 @@
                     <li class="">
                         <i class='bx bx-user icon' id="profile-pic"></i>
                         <span class="text nav-text">
-                            <span class="user-name"><strong>jdelacruz</strong></span>
+                            <span class="user-name"><strong>{{ Auth::user()->username }}</strong></span>
                             <br>
                             <span class="user-name">Admin</span>
                         </span>
@@ -109,10 +109,15 @@
                     </li>
 
                     <li class="t_link" data-tippy-content="Logout" data-tippy-arrow="false">
-                        <a href="#">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
                             <i class='bx bx-log-out icon'></i>
                             <span class="text nav-text">Logout</span>
                         </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </li>
 
                     {{-- <li class="mode">

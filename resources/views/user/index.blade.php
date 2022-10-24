@@ -29,40 +29,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                             
+                        @foreach ($users as $user)
                             <tr>
                                 <td class="td-content">
-                                    Juan Dela Cruz
+                                {{ $user->name }}
                                 </td>
-                                <td class="td-content">jjdelacruz</td>
-                                <td class="td-content">delacruz.juan@gmail.com</td>
-                                <td class="td-content">Administrator</td>
+                                <td class="td-content">{{ $user->username }}</td>
+                                <td class="td-content">{{ $user->email }}</td>
+                                <td class="td-content">{{ $user->email }}</td>
                                 <td>
-                                    <a href="{{ route('users.edit') }}">
+                                    <a href="{{ route('users.edit', $user->id) }}">
                                         <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
                                     </a>
 
-                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
-                                        <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
-                                    </a>
+                                    <a data-tippy-content="Delete user" data-tippy-arrow="false" href ="/users/{{$user->id }}" class="btn-table" onclick="return confirm('Are you sure you want to delete this user?') " >
+                                                <i class='bx bx-trash' ></i>
+                                            </a>
+                                    
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="td-content">
-                                    Melchora Aquino
-                                </td>
-                                <td class="td-content">maquino</td>
-                                <td class="td-content">aquino.melchora@gmail.com</td>
-                                <td class="td-content">BNS</td>
-                                <td>
-                                    <a href="{{ route('users.edit') }}">
-                                        <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false" ></i>
-                                    </a>
-
-                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
-                                        <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                           
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

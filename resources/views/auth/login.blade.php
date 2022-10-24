@@ -97,7 +97,7 @@
                         <a href="{{ route('register') }}" class="auth-link-icon"><i class='bx bxs-user-plus'></i></a>
                     </div>
                     <div class="auth-form">
-                        <form action="" method="post">
+                        <form action="{{ route('login') }}" method="post">
                             @csrf
                             <div class="form-row">
                                 <input type="text" class="form-control form-auth @error('username') is-invalid @enderror" name="username" placeholder="Username" value="{{ old('username') }}" required autocomplete="username" autofocus>

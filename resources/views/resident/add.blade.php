@@ -122,8 +122,9 @@
                                 {{-- Senior Tab --}}
         
                                 <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
-                                    <form action="" method="POST">
-                                        <div class="form-row row">
+                                <form method="POST" action="{{ route('senior.register') }}">
+                                @csrf
+                                <div class="form-row row">
                                             <div class="col-lg-6">
                                                 <div class="row form-row">
                                                     <div class="col-lg-12">
@@ -177,7 +178,8 @@
                                 {{-- Baby Tab --}}
         
                                 <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
-                                    <form action="" method="POST">
+                                <form method="POST" action="{{ route('baby.register') }}">
+                                @csrf
                                         <div class="form-row row">
                                             <div class="col-lg-6">
                                                 <div class="row form-row">
@@ -193,7 +195,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="prob_other_birth">Birthday:</label>
-                                                        <input type="text" name="baby_birthday" id="baby_birthday" class="form-control" required>
+                                                        <input type="text" name="baby_bday" id="baby_bday" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="row form-row">
