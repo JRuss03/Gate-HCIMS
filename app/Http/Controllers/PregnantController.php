@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Senior;
 use App\Models\Baby;
 use App\Models\Pregnant;
+use App\Models\Children;
 use App\Models\Resident;
 use DB;
 
@@ -23,36 +24,40 @@ class PregnantController extends Controller
             'prob_bdate' =>$request->input('preg_birth_date'),
         
         ]);
-        $preg_children = $request->preg_children;
-        $preg_agechildren = $request->preg_agechildren;
-        $prob_other_birth = $request->prob_other_birth;
-        $pregnant_id =  $pregnant->id;
-        for ($i = 0; $i < count($prob_other_birth); $i++) {
-            $datasave = [
-                'pregnant_id' => $pregnant_id,
-                'name' => $preg_children[$i],
-                'age' => $preg_agechildren[$i],
-                'problem' => $prob_other_birth[$i],
-            
-            ];
+        return view('resident.add')->with('message', 'New Pregnant created');
+       
+        // $preg_children = $request->preg_children;
+        // $preg_agechildren = $request->preg_agechildren;
+        // $prob_other_birth = $request->prob_other_birth;
 
-            DB::table('children')->insert($datasave);
-        }
+        // $pregnant_id =  $pregnant->id;
+
+        // for ($i = 0; $i < count($prob_other_birth); $i++) {
+        //     $datasave = [
+        //         'pregnant_id' => $pregnant_id,
+        //         'name' => $preg_children[$i],
+        //         'age' => $preg_agechildren[$i],
+        //         'problem' => $prob_other_birth[$i],
+            
+        //     ];
+
+        //  DB::table('children')->insert($datasave);
+
+        // }
         
-        $prob_id = DB::table('children')->where('pregnant_id', $pregnant_id)->get();
+        // $childid_id = DB::table('children')->where('pregnant_id', $pregnant_id)->get();
+        
+        // $childid_id_arr = array();
+        //     foreach ($childid_id as $childid) {
+        //         $childid_id_arr[] = $childid->id;
+        //     }
 
-            $prob_id_arr = array();
-
-            foreach ($prob_id as $prob) {
-                $prob_id_arr[] = $prob->id;
-            }
-
-            $childid = Pregnant::findOrFail($pregnant_id);
-            $childid->prob_id = implode(',', $prob_id_arr);
-            $childid->save();
-            return redirect()->route('resident.pregnant.show', $pregnant->id)->with('message', 'New Pregnant Added');
-            
-        }
+        //     $childidx = Pregnant::findOrFail($pregnant_id);
+        //     $childidx->childid_id = implode(',', $childid_id_arr);
+        //     $childidx->save();
+        //    return redirect()->route('resident.pregnant.show', $pregnant->id)->with('message', 'New Pregnant Added');
+           }
+    
        
    
     

@@ -26,8 +26,9 @@ class ResidentController extends Controller
 
     // Pregnant
 
-    public function pregnant_show()
+    public function pregnant_show($id)
     {
+        $pregnant = Pregnant::findOrFail($id);
         return view('resident.pregnant.show');
     }
    
