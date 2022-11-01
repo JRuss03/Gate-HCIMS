@@ -84,7 +84,7 @@
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <label for="preg_children">Age of child:</label>
-                                                            <input type="text" name="preg_children[]" id="preg_children" class="form-control">
+                                                            <input type="text" name="preg_agechildren[]" id="preg_agechildren" class="form-control">
                                                         </div>
                                                         <div class="col-lg-1">
                                                             <button type="button" class="add_child" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;">
