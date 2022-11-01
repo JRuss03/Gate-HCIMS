@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pregnant;
 use App\Models\Senior;
+use App\Models\Children;
 use App\Models\Baby;
 use App\Http\Controllers\SeniorController;
+use App\Http\Controllers\PregnantController;
 class ResidentController extends Controller
 {
     public function index()
     {
         $seniors =Senior::all();
         $babies =Baby::all();
-        return view('resident.index', compact('seniors','babies'));
+        $pregnant =Pregnant::all();
+        return view('resident.index', compact('seniors','babies','pregnant'));
     }
 
     public function add()

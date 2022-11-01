@@ -37,6 +37,8 @@ Route::get('/residents/add', [App\Http\Controllers\ResidentController::class, 'a
     // Pregnant
     Route::get('/residents/pregnant', [App\Http\Controllers\ResidentController::class, 'pregnant_show'])->name('resident.pregnant.show');
     Route::get('/residents/pregnant/edit', [App\Http\Controllers\ResidentController::class, 'pregnant_edit'])->name('resident.pregnant.edit');
+    Route::post('/pregnant/register', [App\Http\Controllers\PregnantController::class, 'register'])->name('pregnant.register');
+    
 
     // Senior
     Route::get('/residents/senior/show/{id}', [App\Http\Controllers\ResidentController::class, 'senior_show'])->name('resident.senior.show');
