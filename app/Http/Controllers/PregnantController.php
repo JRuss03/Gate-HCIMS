@@ -24,7 +24,7 @@ class PregnantController extends Controller
             'prob_bdate' =>$request->input('preg_birth_date'),
         
         ]);
-        return view('resident.add')->with('message', 'New Pregnant created');
+      //  return view('resident.add')->with('message', 'New Pregnant created');
        
         $preg_children = $request->preg_children;
         $preg_agechildren = $request->preg_agechildren;
