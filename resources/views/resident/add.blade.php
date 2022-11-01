@@ -45,6 +45,7 @@
         
                                 <div class="tab-pane fade show active" id="pregnant" role="tabpanel" aria-labelledby="pregnant-tab">
                                     <form action="{{ route('pregnant.register') }}" method="POST">
+                                    @csrf
                                         {{-- <h6><strong>Pregnant Registration</strong></h6> --}}
                                         <div class="form-row row">
                                             <div class="col-lg-6">

@@ -26,36 +26,36 @@ class PregnantController extends Controller
         ]);
         return view('resident.add')->with('message', 'New Pregnant created');
        
-        // $preg_children = $request->preg_children;
-        // $preg_agechildren = $request->preg_agechildren;
-        // $prob_other_birth = $request->prob_other_birth;
+        $preg_children = $request->preg_children;
+        $preg_agechildren = $request->preg_agechildren;
+        $prob_other_birth = $request->prob_other_birth;
 
-        // $pregnant_id =  $pregnant->id;
+        $pregnant_id =  $pregnant->id;
 
-        // for ($i = 0; $i < count($prob_other_birth); $i++) {
-        //     $datasave = [
-        //         'pregnant_id' => $pregnant_id,
-        //         'name' => $preg_children[$i],
-        //         'age' => $preg_agechildren[$i],
-        //         'problem' => $prob_other_birth[$i],
+        for ($i = 0; $i < count($prob_other_birth); $i++) {
+            $datasave = [
+                'pregnant_id' => $pregnant_id,
+                'name' => $preg_children[$i],
+                'age' => $preg_agechildren[$i],
+                'problem' => $prob_other_birth[$i],
             
-        //     ];
+            ];
 
-        //  DB::table('children')->insert($datasave);
+         DB::table('children')->insert($datasave);
 
-        // }
+        }
         
-        // $childid_id = DB::table('children')->where('pregnant_id', $pregnant_id)->get();
+        $childid_id = DB::table('children')->where('pregnant_id', $pregnant_id)->get();
         
-        // $childid_id_arr = array();
-        //     foreach ($childid_id as $childid) {
-        //         $childid_id_arr[] = $childid->id;
-        //     }
+        $childid_id_arr = array();
+            foreach ($childid_id as $childid) {
+                $childid_id_arr[] = $childid->id;
+            }
 
-        //     $childidx = Pregnant::findOrFail($pregnant_id);
-        //     $childidx->childid_id = implode(',', $childid_id_arr);
-        //     $childidx->save();
-        //    return redirect()->route('resident.pregnant.show', $pregnant->id)->with('message', 'New Pregnant Added');
+            $childidx = Pregnant::findOrFail($pregnant_id);
+            $childidx->childid_id = implode(',', $childid_id_arr);
+            $childidx->save();
+           return redirect()->route('resident.pregnant.show', $pregnant->id)->with('message', 'New Pregnant Added');
            }
     
        
