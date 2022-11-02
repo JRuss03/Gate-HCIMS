@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('pregnant_id');
             $table->string('name');
             $table->string('age');
-            $table->string('problem')->nullable();
+            // $table->string('problem')->nullable();
             $table->timestamps();
         });
     }

@@ -33,6 +33,7 @@ return array(
     'App\\Http\\Middleware\\ValidateSignature' => $baseDir . '/app/Http/Middleware/ValidateSignature.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Baby' => $baseDir . '/app/Models/Baby.php',
+    'App\\Models\\Children' => $baseDir . '/app/Models/Children.php',
     'App\\Models\\Permission' => $baseDir . '/app/Models/Permission.php',
     'App\\Models\\Pregnant' => $baseDir . '/app/Models/Pregnant.php',
     'App\\Models\\Resident' => $baseDir . '/app/Models/Resident.php',

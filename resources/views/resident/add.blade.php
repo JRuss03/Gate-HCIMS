@@ -62,7 +62,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="preg_num_child">Number of children:</label>
-                                                        <input type="text" name="preg_num_child" id="preg_num_child" class="form-control" value="0" required>
+                                                        <input type="text" name="preg_num_child" id="preg_num_child" class="form-control" value="1" required>
                                                     </div>
                                                 </div>
                                                 <div class="row form-row">
@@ -260,14 +260,14 @@
                 
                 $('.add_child').on('click', function(e) {
 
-                    $('.children').append('<div class="form-row row"><div class="col-lg-7"><label for="preg_children">Name of child:</label><input type="text" name="preg_children[]" id="preg_children" class="form-control"></div><div class="col-lg-4"><label for="preg_children">Age of child:</label><input type="text" name="preg_children[]" id="preg_children" class="form-control"></div><div class="col-lg-1"><button type="button" class="remove_field" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;"><i class="bx bx-trash"></i></button></div></div>');
-
+                    $('.children').append('<div class="form-row row"><div class="col-lg-7"><label for="preg_children">Name of child:</label><input type="text" name="preg_children[]" id="preg_children" class="form-control"></div><div class="col-lg-4"><label for="preg_children">Age of child:</label><input type="text" name="preg_agechildren[]" id="preg_children" class="form-control"></div><div class="col-lg-1"><button type="button" class="remove_field" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;"><i class="bx bx-trash"></i></button></div></div>');
+                    $('#preg_num_child').val(function(i, val) { return +val+1 });
                 });
 
                 $('.children').on('click', '.remove_field', function(e) {
                     e.preventDefault();
 
-                    // $('#preg_num_child').val(function(i, val) { return +val-1 });
+                    $('#preg_num_child').val(function(i, val) { return +val-1 });
 
                     let row_item = $(this).parent().parent();
                     $(row_item).remove();

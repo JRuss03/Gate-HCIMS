@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('mother_name');
             $table->string('age');
             $table->string('numberofchildren')->nullable();
+            $table->string('children')->nullable();
             $table->string('mensdate');
             $table->string('prob_bdate');
             $table->timestamps();     

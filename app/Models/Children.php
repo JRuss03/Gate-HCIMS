@@ -13,7 +13,7 @@ class Children extends Model
 
         'name',
         'age',
-        'problem',
+        // 'problem',
        
         
     ];

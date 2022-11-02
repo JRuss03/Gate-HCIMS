@@ -59,28 +59,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="td-content">
-                                                    Juana Dela Cruz
-                                                </td>
-                                                <td class="td-content">28</td>
-                                                <td class="td-content">Feb. 14, 2022</td>
-                                                <td class="td-content">Dec. 14, 2022</td>
-                                                <td>
+                                            
+                                            @foreach ($pregnant as $preg)
+                                                
+                                                <tr>
+                                                    <td class="td-content">
+                                                        {{ $preg->mother_name }}
+                                                    </td>
+                                                    <td class="td-content">{{ $preg->age }}</td>
+                                                    <td class="td-content">{{ $preg->mensdate }}</td>
+                                                    <td class="td-content">{{ $preg->prob_bdate }}</td>
+                                                    <td>
 
-                                                    <a href="{{ route('resident.pregnant.show') }}">
-                                                        <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
-                                                    </a>
+                                                        <a href="{{ route('resident.pregnant.show', $preg->id) }}">
+                                                            <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
+                                                        </a>
 
-                                                    <a href="{{ route('resident.pregnant.edit') }}">
-                                                        <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
-                                                    </a>
-                
-                                                    <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
-                                                        <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                                        <a href="{{ route('resident.pregnant.edit', $preg->id) }}">
+                                                            <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
+                                                        </a>
+                    
+                                                        <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
+                                                            <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                            @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>

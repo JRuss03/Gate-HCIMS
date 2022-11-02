@@ -12,6 +12,7 @@ class Pregnant extends Model
         'mother_name',
         'age',
         'numberofchildren',
+        'children',
         'mensdate',
         'prob_bdate',
         

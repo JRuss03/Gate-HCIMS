@@ -552,6 +552,7 @@ class ComposerStaticInit373443a5f224656f7443fa31b43809b9
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Baby' => __DIR__ . '/../..' . '/app/Models/Baby.php',
+        'App\\Models\\Children' => __DIR__ . '/../..' . '/app/Models/Children.php',
         'App\\Models\\Permission' => __DIR__ . '/../..' . '/app/Models/Permission.php',
         'App\\Models\\Pregnant' => __DIR__ . '/../..' . '/app/Models/Pregnant.php',
         'App\\Models\\Resident' => __DIR__ . '/../..' . '/app/Models/Resident.php',

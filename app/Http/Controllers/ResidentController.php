@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Pregnant;
+use App\Models\Baby;
 use App\Models\Senior;
 use App\Models\Children;
-use App\Models\Baby;
+use App\Models\Pregnant;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\SeniorController;
 use App\Http\Controllers\PregnantController;
+
 class ResidentController extends Controller
 {
     public function index()
@@ -29,7 +31,7 @@ class ResidentController extends Controller
     public function pregnant_show($id)
     {
         $pregnant = Pregnant::findOrFail($id);
-        return view('resident.pregnant.show');
+        return view('resident.pregnant.show', compact('pregnant'));
     }
    
     // End of Pregnant

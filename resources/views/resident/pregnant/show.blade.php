@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Resident Details - Juana Dela Cruz')
+@section('title', 'Resident Details')
     
 @section('content')
     
@@ -17,54 +17,53 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-row">
-                            <h4><strong>Juana Dela Cruz</strong></h4>
+                            <h4><strong>{{ $pregnant->mother_name }}</strong></h4>
                             <div class="d-flex align-items-center">
                                 <span class="d-flex align-items-center">
                                     <i class='bx bx-time-five'></i>
-                                    <span class="ms-2">Age: 28</span>
+                                    <span class="ms-2">Age: {{ $pregnant->age }}</span>
                                 </span>
                                 <span class="d-flex align-items-center ms-3">
                                     <i class='bx bx-user'></i>
-                                    <span class="ms-2">Children: 2</span>
+                                    <span class="ms-2">Children: {{ $pregnant->numberofchildren }}</span>
                                 </span>
                             </div>
                         </div>
                         <div class="form-row">
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-calendar'></i>
-                                <span class="ms-2">Last menstration: Feb. 14, 2022</span>
+                                <span class="ms-2">Last menstration: {{ $pregnant->mensdate }}</span>
                             </span>
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-calendar'></i>
-                                <span class="ms-2">Probable birth date: Dec. 22, 2022</span>
+                                <span class="ms-2">Probable birth date: {{ $pregnant->prob_bdate }}</span>
                             </span>
                         </div>
                         <div class="form-row">
+                            @php
+                                
+                                use Illuminate\Support\Facades\DB;
+
+                                $children = DB::table('children')->where('pregnant_id', $pregnant->id)->get();
+
+                            @endphp
                             <h6><strong>Children</strong></h6>
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <span class="d-flex align-items-center">
-                                        <i class='bx bx-user'></i>
-                                        <span class="ms-2">Pedro Dela Cruz</span>
-                                    </span>
-                                    <span class="d-flex align-items-center ms-3">
-                                        <i class='bx bx-time-five'></i>
-                                        <span class="ms-2">Age: 10</span>
-                                    </span>
+                            @foreach ($children as $child)
+                                
+                                <div class="row">
+                                    <div class="d-flex align-items-center">
+                                        <span class="d-flex align-items-center">
+                                            <i class='bx bx-user'></i>
+                                            <span class="ms-2">{{ $child->name }}</span>
+                                        </span>
+                                        <span class="d-flex align-items-center ms-3">
+                                            <i class='bx bx-time-five'></i>
+                                            <span class="ms-2">Age: {{ $child->age }}</span>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="d-flex align-items-center">
-                                    <span class="d-flex align-items-center">
-                                        <i class='bx bx-user'></i>
-                                        <span class="ms-2">Maria Dela Cruz</span>
-                                    </span>
-                                    <span class="d-flex align-items-center ms-3">
-                                        <i class='bx bx-time-five'></i>
-                                        <span class="ms-2">Age: 5</span>
-                                    </span>
-                                </div>
-                            </div>
+
+                            @endforeach
                         </div>
                         <div class="form-row">
                             <h6><strong>Problem w/ other births</strong></h6>
