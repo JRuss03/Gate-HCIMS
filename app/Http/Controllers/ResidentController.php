@@ -33,6 +33,7 @@ class ResidentController extends Controller
         $pregnant = Pregnant::findOrFail($id);
         return view('resident.pregnant.show', compact('pregnant'));
     }
+    
    
     // End of Pregnant
 

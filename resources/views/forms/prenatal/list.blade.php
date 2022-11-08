@@ -14,6 +14,7 @@
                     </span>
                 </div>
                 <div class="card-body">
+                {{-- Pregnant Tab --}}
                     <table id="pregnant-tbl" class="table" style="width: 100%">
                         <thead>
                             <tr>
@@ -21,17 +22,21 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
+                       
+                        @foreach ($pregnant as $preg)
                             <tr>
                                 <td class="td-content">
-                                    Juana Dela Cruz
+                                {{ $preg->mother_name }}
                                 </td>
                                 <td>
-                                    <a href="{{ route('checkup-forms.prenatal.add') }}">
+                                    <a href="{{ route('checkup-forms.prenatal.add',$preg->id) }}">
                                         <i class='bx bx-check btn-table btn-edit' data-tippy-content="Select this resident" data-tippy-arrow="false"></i>
                                     </a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

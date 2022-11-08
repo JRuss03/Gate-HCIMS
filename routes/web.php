@@ -61,7 +61,7 @@ Route::get('/checkup-forms', [App\Http\Controllers\FormController::class, 'index
 
     // Prenatal 
     Route::get('/checkup-forms/prenatal/list', [App\Http\Controllers\FormController::class, 'prenatal_list'])->name('checkup-forms.prenatal.list');
-    Route::get('/checkup-forms/prenatal/add', [App\Http\Controllers\FormController::class, 'prenatal_add'])->name('checkup-forms.prenatal.add');
+    Route::get('/checkup-forms/prenatal/add/{id}', [App\Http\Controllers\FormController::class, 'prenatal_add'])->name('checkup-forms.prenatal.add');
     Route::get('/checkup-forms/prenatal/index', [App\Http\Controllers\FormController::class, 'prenatal_index'])->name('checkup-forms.prenatal.index');
     Route::get('/checkup-forms/prenatal/show', [App\Http\Controllers\FormController::class, 'prenatal_show'])->name('checkup-forms.prenatal.show');
     Route::get('/checkup-forms/prenatal/edit', [App\Http\Controllers\FormController::class, 'prenatal_edit'])->name('checkup-forms.prenatal.edit');

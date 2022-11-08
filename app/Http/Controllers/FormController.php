@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Baby;
+use App\Models\Senior;
+use App\Models\Children;
+use App\Models\Pregnant;
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\SeniorController;
+use App\Http\Controllers\PregnantController;
 
 class FormController extends Controller
 {
@@ -10,17 +17,26 @@ class FormController extends Controller
     {
         return view('forms.index');
     }
+    // public function index()
+    // {
+    //     $seniorslist =Senior::all();
+    //     $babieslist =Baby::all();
+    //     $pregnantlist =Pregnant::all();
+    //     return view('forms.index', compact('seniors','babies','pregnant'));
+    // }
 
     // Prenatal
 
-    public function prenatal_add()
+    public function prenatal_add($id)
     {
-        return view('forms.prenatal.add');
+        $pregnant = Pregnant::findOrFail($id);
+        return view('forms.prenatal.add', compact('pregnant'));
     }
 
     public function prenatal_list()
     {
-        return view('forms.prenatal.list');
+        $pregnant =Pregnant::all();
+        return view('forms.prenatal.list', compact('pregnant'));
     }
 
     public function prenatal_index()
@@ -37,4 +53,8 @@ class FormController extends Controller
     {
         return view('forms.prenatal.edit');
     }
+
+//senior
+
+
 }

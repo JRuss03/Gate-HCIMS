@@ -14,12 +14,13 @@
                     </span>
                 </div>
                 <div class="card-body">
+                @foreach ($pregnant as $preg)
                     <form action="">
                         @csrf
                         <div class="form-row row">
                             <div class="col-lg-3">
                                 <label for="name">Name:</label>
-                                <input type="text" name="name" id="name" value="Juana Dela Cruz" class="form-control" required>
+                                <input type="text" name="name" id="name" value="Juana Dela  Cruz"  class="form-control" required>
                             </div>
                             <div class="col-lg-3">
                                 <label for="age">Age:</label>
@@ -52,6 +53,8 @@
                                 <input type="text" name="ages_children" id="ages_children" class="form-control" required>
                             </div>
                         </div>
+
+                        @endforeach
                         <div class="show_item">
                             <div>
                                 <div class="form-row row" style="margin-top: 50px;">
