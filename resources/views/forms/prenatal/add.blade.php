@@ -14,7 +14,7 @@
                     </span>
                 </div>
                 <div class="card-body">
-                @foreach ($pregnant as $preg)
+              
                     <form action="">
                         @csrf
                         <div class="form-row row">
@@ -54,7 +54,7 @@
                             </div>
                         </div>
 
-                        @endforeach
+                     
                         <div class="show_item">
                             <div>
                                 <div class="form-row row" style="margin-top: 50px;">
