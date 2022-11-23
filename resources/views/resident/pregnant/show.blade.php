@@ -3,6 +3,12 @@
 @section('title', 'Resident Details')
     
 @section('content')
+
+@if (Session::has('message'))
+    <div id="toast">
+        <span class="d-flex align-items-center"><i class='bx bx-check'></i><span>{{ session('message')}}</span></span>
+    </div>
+@endif
     
 <div class="index-contents d-flex justify-content-center">
     <div class="col-lg-8">
@@ -45,6 +51,7 @@
                                 use Illuminate\Support\Facades\DB;
 
                                 $children = DB::table('children')->where('pregnant_id', $pregnant->id)->get();
+                                $problems = DB::table('problems')->where('pregnant_id', $pregnant->id)->get();
 
                             @endphp
                             <h6><strong>Children</strong></h6>
@@ -71,10 +78,12 @@
                                 <p>Anemia</p>
                             </div> --}}
                             <div class="row">
-                                <span class="d-flex align-items-center">
-                                    <i class='bx bx-info-circle'></i>
-                                    <span class="ms-2">No Problems Indicated</span>
-                                </span>
+                                @foreach ($problems as $problem)
+                                    <span class="d-flex align-items-center">
+                                        <i class='bx bx-clipboard'></i>
+                                        <span class="ms-2">{{ $problem->problem }}</span>
+                                    </span>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -85,26 +94,35 @@
                                     <i class='bx bxs-file' style="font-size: 2rem; margin-top: 3px;"></i>
                                     <h6 class="ms-2"><strong>Check-up Forms</strong></h6>
                                 </span>
-                                <a href="" class="btn-add d-flex align-items-center">
+                                <a href="{{ route('checkup-forms.prenatal.add',$pregnant->id) }}" class="btn-add d-flex align-items-center">
                                     <i class='bx bx-plus'></i>
                                     Add New Form
                                 </a>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="d-flex align-items-center">
-                                <div class="file-icon">
-                                    <i class='bx bx-file'></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h6><strong>Prenatal Checkup March</strong></h6>
-                                    <span class="d-flex align-items-center">
-                                        <i class='bx bx-calendar'></i>
-                                        <span class="ms-2">Mar. 22, 2022</span>
-                                    </span>
+                        
+                        @foreach ($prenatals as $prenatal)
+                            <div class="form-row">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="file-icon">
+                                            <i class='bx bx-file'></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6><strong>{{ $prenatal->name }}</strong></h6>
+                                            <span class="d-flex align-items-center">
+                                                <i class='bx bx-calendar'></i>
+                                                <span class="ms-2">{{ $prenatal->created_at }}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('checkup-forms.prenatal.show', $prenatal->id) }}">
+                                        <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>

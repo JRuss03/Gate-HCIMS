@@ -4,6 +4,12 @@
 
 @section('content')
 
+    @if (Session::has('message'))
+        <div id="toast">
+            <span class="d-flex align-items-center"><i class='bx bx-check'></i><span>{{ session('message')}}</span></span>
+        </div>
+    @endif
+
     <div class="index-contents d-flex align-items-center justify-content-center">
         <div class="col-lg-10">
             <div class="card">
@@ -26,7 +32,7 @@
                                 Pregnant
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
@@ -39,7 +45,7 @@
                                 <i class='bx bxs-user-detail'></i>
                                 Baby
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <div class="resident-form">
                         <div class="col-left">
@@ -79,8 +85,8 @@
                                                             <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
                                                         </a>
                     
-                                                        <a href="#" onclick="return confirm('Are you sure you want to delete this user?')">
-                                                            <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete User" data-tippy-arrow="false"></i>
+                                                        <a href="/residents/pregnant/delete/{{ $preg->id }}" onclick="return confirm('Are you sure you want to delete this resident?')">
+                                                            <i class='bx bx-trash btn-table btn-delete' data-tippy-content="Delete resident" data-tippy-arrow="false"></i>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -93,7 +99,7 @@
         
                                 {{-- Senior Tab --}}
         
-                                <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
                                     <table id="senior-tbl" class="table" style="width: 100%">
                                         <thead>
                                             <tr>
@@ -130,11 +136,11 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
         
                                 {{-- Baby Tab --}}
         
-                                <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
+                                {{-- <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
                                     <table id="baby-tbl" class="table" style="width: 100%">
                                         <thead>
                                             <tr>
@@ -173,7 +179,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

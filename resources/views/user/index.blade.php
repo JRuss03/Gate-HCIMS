@@ -4,6 +4,12 @@
 
 @section('content')
 
+    @if (Session::has('message'))
+        <div id="toast">
+            <span class="d-flex align-items-center"><i class='bx bx-check'></i><span>{{ session('message')}}</span></span>
+        </div>
+    @endif
+
     <div class="index-contents d-flex justify-content-center">
         <div class="col-lg-10">
             <div class="card">
@@ -44,8 +50,8 @@
                                     </a>
 
                                     <a data-tippy-content="Delete user" data-tippy-arrow="false" href ="/users/{{$user->id }}" class="btn-table" onclick="return confirm('Are you sure you want to delete this user?') " >
-                                                <i class='bx bx-trash' ></i>
-                                            </a>
+                                        <i class='bx bx-trash' ></i>
+                                    </a>
                                     
                                 </td>
                             </tr>

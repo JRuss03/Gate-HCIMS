@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('children')->nullable();
             $table->string('mensdate');
             $table->string('prob_bdate');
+            $table->string('problem')->nullable();
             $table->timestamps();     
         });
     }

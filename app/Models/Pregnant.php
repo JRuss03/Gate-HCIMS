@@ -15,6 +15,11 @@ class Pregnant extends Model
         'children',
         'mensdate',
         'prob_bdate',
-        
+        'problem',
     ];
+
+    public function prenatals()
+    {
+        return $this->hasMany(Prenatal::class);
+    }
 }

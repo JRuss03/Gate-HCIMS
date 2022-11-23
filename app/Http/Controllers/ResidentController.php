@@ -6,8 +6,9 @@ use App\Models\Baby;
 use App\Models\Senior;
 use App\Models\Children;
 use App\Models\Pregnant;
-use Illuminate\Http\Request;
+use App\Models\Prenatal;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\SeniorController;
 use App\Http\Controllers\PregnantController;
 
@@ -31,7 +32,17 @@ class ResidentController extends Controller
     public function pregnant_show($id)
     {
         $pregnant = Pregnant::findOrFail($id);
-        return view('resident.pregnant.show', compact('pregnant'));
+
+        $prenatals = Prenatal::where('pregnant_id', $id)->get();
+
+        return view('resident.pregnant.show', compact('pregnant', 'prenatals'));
+    }
+
+    public function pregnant_edit($id)
+    {
+        $pregnant = Pregnant::findOrFail($id);
+
+        return view('resident.pregnant.edit', compact('pregnant'));
     }
     
    
@@ -39,22 +50,22 @@ class ResidentController extends Controller
 
     // Senior
 
-    public function senior_show($id)
-    {
-        $senior = Senior::findOrFail($id);
-        return view('resident.senior.show', compact('senior'));
-    }
+    // public function senior_show($id)
+    // {
+    //     $senior = Senior::findOrFail($id);
+    //     return view('resident.senior.show', compact('senior'));
+    // }
 
 
     // End of Senior
 
     // Baby
 
-    public function baby_show($id)
-    {
-        $baby = Baby::findOrFail($id);
-        return view('resident.baby.show', compact('baby'));
-    }
+    // public function baby_show($id)
+    // {
+    //     $baby = Baby::findOrFail($id);
+    //     return view('resident.baby.show', compact('baby'));
+    // }
 
 
     // End of Baby

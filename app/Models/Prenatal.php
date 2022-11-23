@@ -5,21 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Children extends Model
+class Prenatal extends Model
 {
-   // use HasFactory;
+    use HasFactory;
+
     protected $fillable = [
         'pregnant_id',
-
         'name',
-        'age',
-        'child_uniqid',
-        // 'problem',
-       
-        
+        'last_childbirth',
+        'details',
     ];
-    public function pregnant()
+
+    function pregnant()
     {
-        return $this->hasMany(Pregnant::class);
+        return $this->belongsTo(Pregnant::class, 'pregnant_id');
     }
 }

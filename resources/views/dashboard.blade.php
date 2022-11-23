@@ -8,17 +8,32 @@
     <div class="index-contents d-flex justify-content-center">
         <div class="col-lg-10">
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-6" style="padding-right: 20px;">
                     <div class="form-row row">
-                        <div class="col-lg-1">
-                            <i class='bx bx-user-circle' style="font-size: 4.8rem;"></i>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <i class='bx bx-user-circle' style="font-size: 4.8rem;"></i>
+                                </div>
+                                <div class="col-lg-11" style="padding-left: 60px;">
+                                    <h2><strong>{{ Auth::user()->name }}</strong></h2>
+                                    <h6>System Administrator</h6>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-11" style="padding-left: 50px;">
-                            <h2><strong>{{ Auth::user()->name }}</strong></h2>
-                            <h6>System Administrator</h6>
+                        {{-- <div class="col-lg-3">
+                            <p><strong>Residents Added Today</strong></p>
+                            <h2 style="margin-top: -10px;"><strong>5</strong></h2>
+                        </div> --}}
+                    </div>
+                    <div class="row" style="margin-top: 50px;">
+                        <div class="card">
+                            <div class="card-body">
+                                <canvas id="myChart"></canvas>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-row row" style="margin-top: 50px;">
+                    {{-- <div class="form-row row" style="margin-top: 50px;">
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
@@ -37,9 +52,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6" style="padding-left: 20px;">
                     <div class="card">
                         <div class="card-body">
                             <div id="calendar"></div>
@@ -47,10 +62,10 @@
                     </div>
                 </div>
             </div>
-            <div class="form-row row" style="margin-bottom: 30px;">
+            {{-- <div class="form-row row" style="margin-bottom: 30px;">
                 <h3><strong>Residents</strong></h3>
-            </div>
-            <div class="row">
+            </div> --}}
+            {{-- <div class="row">
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
@@ -72,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 
@@ -133,57 +148,57 @@
             }
         });
 
-        const sctx = document.getElementById('smyChart').getContext('2d');
-        const smyChart = new Chart(sctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Senior Residents',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(75, 192, 192, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+        // const sctx = document.getElementById('smyChart').getContext('2d');
+        // const smyChart = new Chart(sctx, {
+        //     type: 'line',
+        //     data: {
+        //         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        //         datasets: [{
+        //             label: 'Senior Residents',
+        //             data: [12, 19, 3, 5, 2, 3],
+        //             backgroundColor: [
+        //                 'rgba(75, 192, 192, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(75, 192, 192, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         }
+        //     }
+        // });
 
-        const bctx = document.getElementById('bmyChart').getContext('2d');
-        const bmyChart = new Chart(bctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Baby Residents',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.5)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+        // const bctx = document.getElementById('bmyChart').getContext('2d');
+        // const bmyChart = new Chart(bctx, {
+        //     type: 'line',
+        //     data: {
+        //         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        //         datasets: [{
+        //             label: 'Baby Residents',
+        //             data: [12, 19, 3, 5, 2, 3],
+        //             backgroundColor: [
+        //                 'rgba(54, 162, 235, 0.5)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(54, 162, 235, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         }
+        //     }
+        // });
     </script>
 
 @endsection

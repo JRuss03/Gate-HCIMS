@@ -36,24 +36,26 @@ Route::get('/residents/add', [App\Http\Controllers\ResidentController::class, 'a
 
     // Pregnant
     Route::get('/residents/pregnant/{id}', [App\Http\Controllers\ResidentController::class, 'pregnant_show'])->name('resident.pregnant.show');
-    Route::get('/residents/pregnant/edit', [App\Http\Controllers\ResidentController::class, 'pregnant_edit'])->name('resident.pregnant.edit');
-    Route::post('/pregnant/register', [App\Http\Controllers\PregnantController::class, 'register'])->name('pregnant.register');
+    Route::get('/residents/pregnant/edit/{id}', [App\Http\Controllers\ResidentController::class, 'pregnant_edit'])->name('resident.pregnant.edit');
+    Route::post('/residents/pregnant/update', [App\Http\Controllers\PregnantController::class, 'update'])->name('pregnant.update');
+    Route::post('/residents/pregnant/register', [App\Http\Controllers\PregnantController::class, 'register'])->name('pregnant.register');
+    Route::get('/residents/pregnant/delete/{id}', [App\Http\Controllers\PregnantController::class, 'delete'])->name('pregnant.delete');
     
 
     // Senior
-    Route::get('/residents/senior/show/{id}', [App\Http\Controllers\ResidentController::class, 'senior_show'])->name('resident.senior.show');
-    Route::post('/senior/register', [App\Http\Controllers\SeniorController::class, 'register'])->name('senior.register');
-    Route::get('/senior/edit/{id}', [App\Http\Controllers\SeniorController::class, 'edit'])->name('senior.edit');
-    Route::post('/edit-store-seniors', [App\Http\Controllers\SeniorController::class, 'edit_store'])->name('seniors.edit-store');
-    Route::get('/senior/delete/{id}', [App\Http\Controllers\SeniorController::class, 'delete'] )->name('senior.delete');
+    // Route::get('/residents/senior/show/{id}', [App\Http\Controllers\ResidentController::class, 'senior_show'])->name('resident.senior.show');
+    // Route::post('/senior/register', [App\Http\Controllers\SeniorController::class, 'register'])->name('senior.register');
+    // Route::get('/senior/edit/{id}', [App\Http\Controllers\SeniorController::class, 'edit'])->name('senior.edit');
+    // Route::post('/edit-store-seniors', [App\Http\Controllers\SeniorController::class, 'edit_store'])->name('seniors.edit-store');
+    // Route::get('/senior/delete/{id}', [App\Http\Controllers\SeniorController::class, 'delete'] )->name('senior.delete');
 
     
     // Baby
-    Route::get('/residents/baby/show/{id}', [App\Http\Controllers\ResidentController::class, 'baby_show'])->name('resident.baby.show');
-    Route::post('/baby/register', [App\Http\Controllers\BabyController::class, 'register'])->name('baby.register');
-    Route::get('/baby/edit/{id}', [App\Http\Controllers\BabyController::class, 'edit'])->name('baby.edit');
-    Route::post('/edit-store-baby', [App\Http\Controllers\BabyController::class, 'edit_store'])->name('baby.edit-store');
-    Route::get('/baby/delete/{id}', [App\Http\Controllers\BabyController::class, 'delete'] )->name('baby.delete');
+    // Route::get('/residents/baby/show/{id}', [App\Http\Controllers\ResidentController::class, 'baby_show'])->name('resident.baby.show');
+    // Route::post('/baby/register', [App\Http\Controllers\BabyController::class, 'register'])->name('baby.register');
+    // Route::get('/baby/edit/{id}', [App\Http\Controllers\BabyController::class, 'edit'])->name('baby.edit');
+    // Route::post('/edit-store-baby', [App\Http\Controllers\BabyController::class, 'edit_store'])->name('baby.edit-store');
+    // Route::get('/baby/delete/{id}', [App\Http\Controllers\BabyController::class, 'delete'] )->name('baby.delete');
 // End of Resident
 
 // Check-up Forms
@@ -63,8 +65,11 @@ Route::get('/checkup-forms', [App\Http\Controllers\FormController::class, 'index
     Route::get('/checkup-forms/prenatal/list', [App\Http\Controllers\FormController::class, 'prenatal_list'])->name('checkup-forms.prenatal.list');
     Route::get('/checkup-forms/prenatal/add/{id}', [App\Http\Controllers\FormController::class, 'prenatal_add'])->name('checkup-forms.prenatal.add');
     Route::get('/checkup-forms/prenatal/index', [App\Http\Controllers\FormController::class, 'prenatal_index'])->name('checkup-forms.prenatal.index');
-    Route::get('/checkup-forms/prenatal/show', [App\Http\Controllers\FormController::class, 'prenatal_show'])->name('checkup-forms.prenatal.show');
-    Route::get('/checkup-forms/prenatal/edit', [App\Http\Controllers\FormController::class, 'prenatal_edit'])->name('checkup-forms.prenatal.edit');
+    Route::get('/checkup-forms/prenatal/show/{id}', [App\Http\Controllers\FormController::class, 'prenatal_show'])->name('checkup-forms.prenatal.show');
+    Route::get('/checkup-forms/prenatal/edit/{id}', [App\Http\Controllers\FormController::class, 'prenatal_edit'])->name('checkup-forms.prenatal.edit');
+    Route::post('/checkup-forms/prenatal/register', [App\Http\Controllers\FormController::class, 'register'])->name('checkup-forms.prenatal.register');
+    Route::post('/checkup-forms/prenatal/update', [App\Http\Controllers\FormController::class, 'update'])->name('checkup-forms.prenatal.update');
+    Route::get('/checkup-forms/prenatal/delete/{id}', [App\Http\Controllers\FormController::class, 'delete'])->name('checkup-forms.prenatal.delete');
 
 // End of Check-up Forms
 

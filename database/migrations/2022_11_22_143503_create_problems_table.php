@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('children', function (Blueprint $table) {
+        Schema::create('problems', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('pregnant_id');
-            $table->string('name');
-            $table->string('age');
-            $table->string('child_uniqid');
-            // $table->string('problem')->nullable();
+            $table->string('problem');
+            $table->string('prob_uniqid');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('children');
+        Schema::dropIfExists('problems');
     }
 };

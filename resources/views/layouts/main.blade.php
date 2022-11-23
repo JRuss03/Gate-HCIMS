@@ -59,12 +59,12 @@
                 </li>
 
                 <ul class="menu-links">
-                    <li class="nav-link link {{ (request()->segment(1) == 'dashboard') ? 'nav-active' : '' }}" data-tippy-content="Dashboard" data-tippy-arrow="false">
+                    {{-- <li class="nav-link link {{ (request()->segment(1) == 'dashboard') ? 'nav-active' : '' }}" data-tippy-content="Dashboard" data-tippy-arrow="false">
                         <a href="/dashboard">
                             <i class='bx bx-grid-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="nav-link link {{ (request()->segment(1) == 'residents') ? 'nav-active' : '' }}" data-tippy-content="Residents" data-tippy-arrow="false">
                         <a href="{{ route('residents.index') }}">
@@ -95,18 +95,18 @@
                     <li class="">
                         <i class='bx bx-user icon' id="profile-pic"></i>
                         <span class="text nav-text">
-                            <span class="user-name"><strong>{{ Auth::user()->username }}</strong></span>
+                            <span class="user-name"><strong>{{ Auth::user()->name }}</strong></span>
                             <br>
                             <span class="user-name">Admin</span>
                         </span>
                     </li>
 
-                    <li class="t_link" data-tippy-content="Manage Account" data-tippy-arrow="false">
+                    {{-- <li class="t_link" data-tippy-content="Manage Account" data-tippy-arrow="false">
                         <a href="{{ route('users.manage') }}">
                             <i class='bx bx-cog icon'></i>
                             <span class="text nav-text">Account</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li class="t_link" data-tippy-content="Logout" data-tippy-arrow="false">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -243,6 +243,13 @@
             searchBtn.addEventListener("click", () => {
                 sidebar.classList.remove("close");
             });
+
+            //Toast
+            var x = document.getElementById("toast");
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 5000);
             
         });
     </script>

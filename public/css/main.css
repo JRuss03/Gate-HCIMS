@@ -775,3 +775,52 @@ span, p {
     text-decoration: none;
     color: var(--text-color);
 }
+
+/* Toast */
+#toast {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+
+    /* box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, .2); */
+    background-color: var(--accent-color);
+
+    color: var(--body-color);
+    padding: 10px 30px;
+
+    border-radius: 30px;
+    text-align: center;
+    z-index: 999;
+   
+    visibility: hidden;
+    opacity: 0;
+
+    font-size: 0.8em;
+    width: auto;
+}
+
+#toast i {
+    font-size: 1.8em;
+    margin-right: 0.5em;
+}
+
+#toast.show {
+    visibility: visible;
+    animation: fadeInOut 3s;
+}
+
+@keyframes fadeInOut {
+
+    5%,
+    95% {
+        opacity: 1;
+        top: 50px
+    }
+
+    15%,
+    85% {
+        opacity: 1;
+        top: 30px
+    }
+}

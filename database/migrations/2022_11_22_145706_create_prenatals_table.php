@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('residents', function (Blueprint $table) {
+        Schema::create('prenatals', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('pregnant_id');
+            $table->string('name')->nullable();
+            $table->string('last_childbirth')->nullable();
+            $table->string('details')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('residents');
+        Schema::dropIfExists('prenatals');
     }
 };

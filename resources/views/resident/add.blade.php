@@ -22,7 +22,7 @@
                                 Pregnant
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
@@ -35,7 +35,7 @@
                                 <i class='bx bxs-user-detail'></i>
                                 Baby
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <div class="resident-form">
                         <div class="col-left">
@@ -45,7 +45,7 @@
         
                                 <div class="tab-pane fade show active" id="pregnant" role="tabpanel" aria-labelledby="pregnant-tab">
                                     <form action="{{ route('pregnant.register') }}" method="POST">
-                                    @csrf
+                                        @csrf
                                         {{-- <h6><strong>Pregnant Registration</strong></h6> --}}
                                         <div class="form-row row">
                                             <div class="col-lg-6">
@@ -62,7 +62,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="preg_num_child">Number of children:</label>
-                                                        <input type="text" name="preg_num_child" id="preg_num_child" class="form-control" value="1" required>
+                                                        <input type="text" name="preg_num_child" id="preg_num_child" class="form-control" value="1">
                                                     </div>
                                                 </div>
                                                 <div class="row form-row">
@@ -76,19 +76,22 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-6">
                                                 <div class="children">
                                                     <div class="form-row row">
                                                         <div class="col-lg-7">
                                                             <label for="preg_children">Name of child:</label>
                                                             <input type="text" name="preg_children[]" id="preg_children" class="preg_children form-control">
+                                                            <input type="hidden" id="child_id" value="0">
+                                                            <input type="hidden" name="child_uniqid[]" id="child_uniqid">
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <label for="preg_children">Age of child:</label>
                                                             <input type="text" name="preg_agechildren[]" id="preg_agechildren" class="form-control">
                                                         </div>
                                                         <div class="col-lg-1">
-                                                            <button type="button" class="add_child" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;">
+                                                            <button type="button" class="add_child" onclick="ChildbuttonClick()" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;">
                                                                 <i class='bx bx-list-plus'></i>
                                                             </button>
                                                         </div>
@@ -99,9 +102,11 @@
                                                         <div class="col-lg-11">
                                                             <label for="prob_other_birth">Problem w/ other birth:</label>
                                                             <input type="text" name="prob_other_birth[]" id="prob_other_birth" class="form-control">
+                                                            <input type="hidden" id="prob_id" value="0">
+                                                            <input type="hidden" name="prob_uniqid[]" id="prob_uniqid">
                                                         </div>
                                                         <div class="col-lg-1">
-                                                            <button type="button" class="add_prob" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;">
+                                                            <button type="button" class="add_prob" onclick="buttonClick()" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;">
                                                                 <i class='bx bx-list-plus'></i>
                                                             </button>
                                                         </div>
@@ -122,7 +127,7 @@
         
                                 {{-- Senior Tab --}}
         
-                                <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
                                 <form method="POST" action="{{ route('senior.register') }}">
                                 @csrf
                                 <div class="form-row row">
@@ -174,11 +179,11 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
         
                                 {{-- Baby Tab --}}
         
-                                <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
+                                {{-- <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
                                 <form method="POST" action="{{ route('baby.register') }}">
                                 @csrf
                                         <div class="form-row row">
@@ -242,7 +247,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -255,13 +260,36 @@
     @section('page-scripts')
 
         <script>
+            var i = 0;
+            function ChildbuttonClick() {
+                document.getElementById('child_id').value = ++i;
+            }
+        
+        </script>
+
+        <script>
+            var i = 0;
+            function buttonClick() {
+                document.getElementById('prob_id').value = ++i;
+            }
+
+        </script>
+
+        <script type="module">
+            import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
             $(document).ready(function() {
+
+                $('#child_uniqid').val(uuidv4());
+                $('#prob_uniqid').val(uuidv4());
                 
                 $('.add_child').on('click', function(e) {
+                    let child_id = $('#child_id').val();
 
-                    $('.children').append('<div class="form-row row"><div class="col-lg-7"><label for="preg_children">Name of child:</label><input type="text" name="preg_children[]" id="preg_children" class="form-control"></div><div class="col-lg-4"><label for="preg_children">Age of child:</label><input type="text" name="preg_agechildren[]" id="preg_children" class="form-control"></div><div class="col-lg-1"><button type="button" class="remove_field" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;"><i class="bx bx-trash"></i></button></div></div>');
+                    $('.children').append('<div class="form-row row"><div class="col-lg-7"><label for="preg_children">Name of child:</label><input type="text" name="preg_children[]" id="preg_children'+ child_id +'" class="form-control"></div><div class="col-lg-4"><label for="preg_children">Age of child:</label><input type="text" name="preg_agechildren[]" id="preg_children'+ child_id +'" class="form-control"><input type="hidden" name="child_uniqid[]" id="child_uniqid'+ child_id +'"></div><div class="col-lg-1"><button type="button" class="remove_field" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;"><i class="bx bx-trash"></i></button></div></div>');
                     $('#preg_num_child').val(function(i, val) { return +val+1 });
+
+                    $('#child_uniqid' + child_id).val(uuidv4());
                 });
 
                 $('.children').on('click', '.remove_field', function(e) {
@@ -274,9 +302,11 @@
                 })
 
                 $('.add_prob').on('click', function(e) {
+                    let prob_id = $('#prob_id').val();
 
-                    $('.birth_problems').append('<div class="form-row row"><div class="col-lg-11"><label for="prob_other_birth">Problem w/ other birth:</label><input type="text" name="prob_other_birth[]" id="prob_other_birth" class="form-control"></div><div class="col-lg-1"><button type="button" class="remove_field" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;"><i class="bx bx-trash"></i></button></div></div>');
+                    $('.birth_problems').append('<div class="form-row row"><div class="col-lg-11"><label for="prob_other_birth">Problem w/ other birth:</label><input type="text" name="prob_other_birth[]" id="prob_other_birth'+ prob_id +'" class="form-control"><input type="hidden" name="prob_uniqid[]" id="prob_uniqid'+ prob_id +'"></div><div class="col-lg-1"><button type="button" class="remove_field" style="margin-top: 1.5rem; border: none; background-color: transparent; font-size: 1.3rem;"><i class="bx bx-trash"></i></button></div></div>');
 
+                    $('#prob_uniqid' + prob_id).val(uuidv4());
                 });
 
                 $('.birth_problems').on('click', '.remove_field', function(e) {
