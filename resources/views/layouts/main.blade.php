@@ -152,7 +152,7 @@
                 @yield('content')
             </div>
         </main>
-
+        <h6 class="copyright">Copyright 2023 <strong>BRGY. GATE</strong>; All rights reserved.</h6>
     </section>
 
     {{-- @yield('content') --}}
