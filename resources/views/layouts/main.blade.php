@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
 
     <!-- FullCalendar -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.css" />
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.css" /> --}}
     
     {{-- Local CSS --}}
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
@@ -59,12 +59,12 @@
                 </li>
 
                 <ul class="menu-links">
-                    {{-- <li class="nav-link link {{ (request()->segment(1) == 'dashboard') ? 'nav-active' : '' }}" data-tippy-content="Dashboard" data-tippy-arrow="false">
+                    <li class="nav-link link {{ (request()->segment(1) == 'dashboard') ? 'nav-active' : '' }}" data-tippy-content="Dashboard" data-tippy-arrow="false">
                         <a href="/dashboard">
                             <i class='bx bx-grid-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
-                    </li> --}}
+                    </li>
 
                     <li class="nav-link link {{ (request()->segment(1) == 'residents') ? 'nav-active' : '' }}" data-tippy-content="Residents" data-tippy-arrow="false">
                         <a href="{{ route('residents.index') }}">
@@ -179,7 +179,7 @@
     
     {{-- FullCalendar --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.js"></script> --}}
 
     {{-- Chart.js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

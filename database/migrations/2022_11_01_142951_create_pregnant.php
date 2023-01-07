@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('mensdate');
             $table->string('prob_bdate');
             $table->string('problem')->nullable();
+            $table->string('created');
             $table->timestamps();     
         });
     }

@@ -16,6 +16,7 @@ class Pregnant extends Model
         'mensdate',
         'prob_bdate',
         'problem',
+        'created',
     ];
 
     public function prenatals()

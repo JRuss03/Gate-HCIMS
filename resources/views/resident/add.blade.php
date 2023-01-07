@@ -19,10 +19,10 @@
                             <a class="tab active d-flex align-items-center" id="pregnant-tab" data-bs-toggle="tab" href="#pregnant"
                                 role="tab" aria-controls="other" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
-                                Pregnant
+                                Pregnant Citizen
                             </a>
                         </li>
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
@@ -33,9 +33,9 @@
                             <a class="tab d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
                                 role="tab" aria-controls="hospital" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
-                                Baby
+                                Infants
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                     <div class="resident-form">
                         <div class="col-left">
@@ -127,7 +127,7 @@
         
                                 {{-- Senior Tab --}}
         
-                                {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
                                 <form method="POST" action="{{ route('senior.register') }}">
                                 @csrf
                                 <div class="form-row row">
@@ -179,11 +179,11 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div> --}}
+                                </div>
         
                                 {{-- Baby Tab --}}
         
-                                {{-- <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
+                                <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
                                 <form method="POST" action="{{ route('baby.register') }}">
                                 @csrf
                                         <div class="form-row row">
@@ -201,19 +201,13 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="prob_other_birth">Birthday:</label>
-                                                        <input type="text" name="baby_bday" id="baby_bday" class="form-control" required>
+                                                        <input type="date" name="baby_bday" id="baby_bday" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="row form-row">
                                                     <div class="col-lg-12">
                                                         <label for="prob_other_birth">Purok:</label>
                                                         <input type="text" name="baby_purok" id="baby_purok" class="form-control" required>
-                                                    </div>
-                                                </div>
-                                                <div class="row form-row">
-                                                    <div class="col-lg-12">
-                                                        <label for="prob_other_birth">Guardian:</label>
-                                                        <input type="text" name="baby_guardian" id="baby_guardian" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,6 +222,12 @@
                                                     <div class="col-lg-12">
                                                         <label for="prob_other_birth">Father's Name:</label>
                                                         <input type="text" name="baby_f_name" id="baby_f_name" class="form-control" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row form-row">
+                                                    <div class="col-lg-12">
+                                                        <label for="prob_other_birth">Guardian:</label>
+                                                        <input type="text" name="baby_guardian" id="baby_guardian" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="row form-row">
@@ -247,7 +247,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>

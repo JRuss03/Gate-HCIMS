@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use DB;
+use Carbon\Carbon;
 use App\Models\Children;
 use App\Models\Pregnant;
-use DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PregnantController extends Controller
 {
@@ -18,6 +19,7 @@ class PregnantController extends Controller
             'numberofchildren' => $request->input('preg_num_child'),
             'mensdate' => $request->input('preg_mens_date'),
             'prob_bdate' => $request->input('preg_birth_date'),
+            'created' => Carbon::now(),
 
         ]);
 

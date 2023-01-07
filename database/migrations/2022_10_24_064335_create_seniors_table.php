@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('guardian');
             $table->string('guardian_contact_no');
             $table->string('purok');
+            $table->string('created');
             $table->rememberToken();
             $table->timestamps();
         });

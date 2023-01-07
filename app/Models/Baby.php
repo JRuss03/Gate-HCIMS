@@ -17,5 +17,6 @@ class Baby extends Model
     'guardian',
     'guardian_contact_no',
     'purok',
+    'created',
 ];
 }

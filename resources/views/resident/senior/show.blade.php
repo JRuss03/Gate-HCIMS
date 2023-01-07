@@ -3,9 +3,15 @@
 @section('title', 'Resident Details - Melchora Aquino')
     
 @section('content')
+
+@if (Session::has('message'))
+    <div id="toast">
+        <span class="d-flex align-items-center"><i class='bx bx-check'></i><span>{{ session('message')}}</span></span>
+    </div>
+@endif
     
 <div class="index-contents d-flex justify-content-center">
-    <div class="col-lg-8">
+    <div class="col-lg-4">
         <div class="card">
             <div class="card-header">
                 <span class="d-flex align-items-center auth-card-header">
@@ -15,7 +21,7 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="form-row">
                             <h4><strong>{{$senior->name}}</strong></h4>
                             <div class="d-flex align-items-center">
@@ -25,7 +31,7 @@
                                 </span>
                                 <span class="d-flex align-items-center ms-3">
                                     <i class='bx bx-cake'></i>
-                                    <span class="ms-2">Birthday: {{$senior->birthday}}</span>
+                                    <span class="ms-2"> {{$senior->birthday}}</span>
                                 </span>
                             </div>
                         </div>
@@ -51,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    {{-- <div class="col-lg-6">
                         <div class="form-row">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <span class="d-flex align-content-center" style="width: 40%;">
@@ -78,7 +84,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

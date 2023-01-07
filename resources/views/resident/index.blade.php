@@ -29,10 +29,10 @@
                             <a class="tab active d-flex align-items-center" id="pregnant-tab" data-bs-toggle="tab" href="#pregnant"
                                 role="tab" aria-controls="other" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
-                                Pregnant
+                                Pregnant Citizen
                             </a>
                         </li>
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
@@ -43,9 +43,9 @@
                             <a class="tab d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
                                 role="tab" aria-controls="hospital" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
-                                Baby
+                                Infants
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                     <div class="resident-form">
                         <div class="col-left">
@@ -99,7 +99,7 @@
         
                                 {{-- Senior Tab --}}
         
-                                {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
                                     <table id="senior-tbl" class="table" style="width: 100%">
                                         <thead>
                                             <tr>
@@ -120,7 +120,7 @@
                                                 <td class="td-content"> {{ $senior->birthday }}</td>
                                                 <td class="td-content">{{ $senior->guardian }}</td>
                                                 <td>
-                                                    <a href="{{ route('resident.senior.show', $senior->id) }}"> 
+                                                    <a href="{{ route('senior.show', $senior->id) }}"> 
                                                         <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
                                                     </a>
 
@@ -136,11 +136,11 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div> --}}
+                                </div>
         
                                 {{-- Baby Tab --}}
         
-                                {{-- <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
+                                <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
                                     <table id="baby-tbl" class="table" style="width: 100%">
                                         <thead>
                                             <tr>
@@ -163,7 +163,7 @@
                                                 <td class="td-content"> {{ $baby->mother_name }}</td>
                                                 <td class="td-content"> {{ $baby->father_name }}</td>
                                                 <td>
-                                                <a href="{{ route('resident.baby.show', $baby->id) }}"> 
+                                                <a href="{{ route('baby.show', $baby->id) }}"> 
                                                         <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
                                                     </a>
 
@@ -179,7 +179,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>

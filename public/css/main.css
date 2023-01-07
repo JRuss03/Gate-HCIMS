@@ -557,9 +557,13 @@ body.dark .home .text{
     width: 80%;
 }
 
-label, .form-control {
+label {
     font-size: 12px;
     font-weight: bold;
+}
+
+.form-control {
+    font-size: 12px;
 }
 
 .form-row {
