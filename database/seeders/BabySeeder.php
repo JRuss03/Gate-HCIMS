@@ -29,7 +29,7 @@ class BabySeeder extends Seeder
                 'guardian' => $faker->name,
                 'guardian_contact_no' => rand(911111111, 999999999),
                 'purok' => rand(1, 7),
-                'created' =>  $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null) 
+                'created' =>  $faker->dateTimeBetween($startDate = '-1 year', $endDate = 'now', $timezone = null) 
             ]);
         }
     }

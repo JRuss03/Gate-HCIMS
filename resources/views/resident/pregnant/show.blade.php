@@ -38,11 +38,11 @@
                         <div class="form-row">
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-calendar'></i>
-                                <span class="ms-2">Last menstration: {{ $pregnant->mensdate }}</span>
+                                <span class="ms-2">Last menstration: {{ \Carbon\Carbon::parse($pregnant->mensdate)->format('M. d, Y')}}</span>
                             </span>
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-calendar'></i>
-                                <span class="ms-2">Probable birth date: {{ $pregnant->prob_bdate }}</span>
+                                <span class="ms-2">Probable birth date: {{ \Carbon\Carbon::parse($pregnant->prob_bdate)->format('M. d, Y')}}</span>
                             </span>
                         </div>
                         <div class="form-row">
@@ -112,7 +112,7 @@
                                             <h6><strong>{{ $prenatal->name }}</strong></h6>
                                             <span class="d-flex align-items-center">
                                                 <i class='bx bx-calendar'></i>
-                                                <span class="ms-2">{{ $prenatal->created_at }}</span>
+                                                <span class="ms-2">{{ \Carbon\Carbon::parse($prenatal->created_at)->format('M. d, Y')}}</span>
                                             </span>
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Prenatal Forms - Juana Dela Cruz')
+@section('title', 'Prenatal Forms')
     
 @section('content')
 
@@ -19,7 +19,7 @@
                     <h6 style="margin-top: 5px;"><strong>{{ $prenatal->name }}</strong></h6>
                 </span>
                 <a href="{{ route('checkup-forms.prenatal.edit', $prenatal->id) }}">
-                    <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit User" data-tippy-arrow="false"></i>
+                    <i class='bx bx-edit btn-table btn-edit' data-tippy-content="Edit" data-tippy-arrow="false"></i>
                 </a>
             </div>
             <div class="card-body">
@@ -55,7 +55,7 @@
         
                                 $problems = DB::table('problems')->where('pregnant_id', $prenatal->pregnant_id)->get();
 
-                                $details = DB::table('prenatal_details')->where('prenatal_id', $prenatal->id)->get()
+                                $details = DB::table('prenatal_details')->where('prenatal_id', $prenatal->id)->get();
                             @endphp
 
                             <div class="form-row">
@@ -82,15 +82,15 @@
                         <div class="form-row">
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-user'></i>
-                                <span class="ms-2">Date of last childbirth: {{ $prenatal->last_childbirth }}</span>
+                                <span class="ms-2">Date of last childbirth: {{ \Carbon\Carbon::parse($prenatal->last_childbirth)->format('M. d, Y')}}</span>
                             </span>
                             <span class="d-flex align-items-center">
                                 <i class='bx bx-time-five'></i>
-                                <span class="ms-2">Last menstruation date: {{ $prenatal->mensdate }}</span>
+                                <span class="ms-2">Last menstruation date: {{ \Carbon\Carbon::parse($prenatal->mensdate)->format('M. d, Y')}}</span>
                             </span>
                             <span class="d-flex align-items-center flex-wrap">
                                 <i class='bx bx-user'></i>
-                                <span class="ms-2">Probable date of birth:</span><span class="ms-2">{{ $prenatal->prob_bdate }}</span>
+                                <span class="ms-2">Probable date of birth:</span><span class="ms-2">{{ \Carbon\Carbon::parse($prenatal->prob_bdate)->format('M. d, Y')}}</span>
                             </span>
                         </div>
                         <div class="form-row">
@@ -114,7 +114,7 @@
                             <div class="col-lg-6">
                                 <span class="d-flex align-items-center flex-wrap">
                                     <i class='bx bx-user'></i>
-                                    <span class="ms-2"><strong>Date of visit:</strong></span><span class="ms-2">{{ $detail->dateofvisit }}</span>
+                                    <span class="ms-2"><strong>Date of visit:</strong></span><span class="ms-2">{{ \Carbon\Carbon::parse($detail->dateofvisit)->format('M. d, Y')}}</span>
                                 </span>
                                 <span class="d-flex flex-wrap align-items-center">
                                     <i class='bx bx-time-five'></i>
@@ -181,7 +181,7 @@
                                 <span class="d-flex flex-wrap align-items-center">
                                     <i class='bx bx-time-five'></i>
                                     <span class="ms-2"><strong>Birth:</strong></span>
-                                    <span class="ms-2">{{ $detail->birth }}</span>
+                                    <span class="ms-2">{{ \Carbon\Carbon::parse($detail->birth)->format('M. d, Y')}}</span>
                                 </span>
                             </div>
                         </div>
