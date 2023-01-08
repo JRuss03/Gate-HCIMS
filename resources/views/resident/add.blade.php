@@ -22,13 +22,13 @@
                                 Pregnant Citizen
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
                                 Senior Citizen
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
                                 role="tab" aria-controls="hospital" aria-selected="false">
@@ -127,10 +127,10 @@
         
                                 {{-- Senior Tab --}}
         
-                                <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
-                                <form method="POST" action="{{ route('senior.register') }}">
-                                @csrf
-                                <div class="form-row row">
+                                {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                    <form method="POST" action="{{ route('senior.register') }}">
+                                        @csrf
+                                        <div class="form-row row">
                                             <div class="col-lg-6">
                                                 <div class="row form-row">
                                                     <div class="col-lg-12">
@@ -179,13 +179,13 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
         
                                 {{-- Baby Tab --}}
         
                                 <div class="tab-pane fade show" id="baby" role="tabpanel" aria-labelledby="baby-tab">
-                                <form method="POST" action="{{ route('baby.register') }}">
-                                @csrf
+                                    <form method="POST" action="{{ route('baby.register') }}">
+                                        @csrf
                                         <div class="form-row row">
                                             <div class="col-lg-6">
                                                 <div class="row form-row">

@@ -45,8 +45,6 @@ class BabyController extends Controller
 
     public function edit_store(Request $request)
     {
-
-        
         $baby_id =  Baby::find($request->baby_id);
         $baby_id->name  = $request->baby_name;
         $baby_id->age  = $request->baby_age;
@@ -58,9 +56,13 @@ class BabyController extends Controller
         $baby_id->purok  = $request->baby_purok;
         
         $baby_id->save();
-        $baby_id= $request->baby_id;
-        $baby = Baby::findOrFail($baby_id);
-        return view('resident.baby.show', compact('baby'));
+        
+        // $baby_id = $request->baby_id;
+
+        // $baby = Baby::findOrFail($baby_id);
+
+        // return view('resident.baby.show', compact('baby'));
+        return redirect()->route('baby.show', $request->baby_id);
         
     }
 

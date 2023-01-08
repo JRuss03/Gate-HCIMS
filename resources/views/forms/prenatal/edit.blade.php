@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Edit Prenatal Form - Juana Dela Cruz')
+@section('title', 'Edit Prenatal Form')
 
 @section('content')
 

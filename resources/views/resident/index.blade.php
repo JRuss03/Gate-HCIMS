@@ -32,13 +32,13 @@
                                 Pregnant Citizen
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                                 role="tab" aria-controls="location" aria-selected="false">
                                 <i class='bx bxs-user-detail'></i>
                                 Senior Citizen
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="tab d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
                                 role="tab" aria-controls="hospital" aria-selected="false">
@@ -73,8 +73,8 @@
                                                         {{ $preg->mother_name }}
                                                     </td>
                                                     <td class="td-content">{{ $preg->age }}</td>
-                                                    <td class="td-content">{{ $preg->mensdate }}</td>
-                                                    <td class="td-content">{{ $preg->prob_bdate }}</td>
+                                                    <td class="td-content">{{ \Carbon\Carbon::parse($preg->mensdate)->format('M. d, Y')}}</td>
+                                                    <td class="td-content">{{ \Carbon\Carbon::parse($preg->prob_bdate)->format('M. d, Y')}}</td>
                                                     <td>
 
                                                         <a href="{{ route('resident.pregnant.show', $preg->id) }}">
@@ -99,7 +99,7 @@
         
                                 {{-- Senior Tab --}}
         
-                                <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                                {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
                                     <table id="senior-tbl" class="table" style="width: 100%">
                                         <thead>
                                             <tr>
@@ -136,7 +136,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div>
+                                </div> --}}
         
                                 {{-- Baby Tab --}}
         
@@ -159,7 +159,7 @@
                                                 {{ $baby->name }}
                                                 </td>
                                                 <td class="td-content"> {{ $baby->age }}</td>
-                                                <td class="td-content"> {{ $baby->birthday }}</td>
+                                                <td class="td-content"> {{ \Carbon\Carbon::parse($baby->birthday)->format('M. d, Y')}}</td>
                                                 <td class="td-content"> {{ $baby->mother_name }}</td>
                                                 <td class="td-content"> {{ $baby->father_name }}</td>
                                                 <td>

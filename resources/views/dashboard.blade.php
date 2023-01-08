@@ -34,13 +34,13 @@
                             Pregnant Citizen
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="tab d-flex align-items-center ms-2" id="senior-tab" data-bs-toggle="tab" href="#senior"
                             role="tab" aria-controls="location" aria-selected="false">
                             <i class='bx bxs-user-detail'></i>
                             Senior Citizen
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="tab d-flex align-items-center ms-2" id="baby-tab" data-bs-toggle="tab" href="#baby"
                             role="tab" aria-controls="hospital" aria-selected="false">
@@ -105,13 +105,12 @@
 
                     {{-- Senior Tab --}}
 
-                    <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
+                    {{-- <div class="tab-pane fade show" id="senior" role="tabpanel" aria-labelledby="senior-tab">
                         <div class="col-lg-12" style="margin-top: 30px;">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center">
-                                            {{-- <i class='bx bx-user' style="font-size: 1.8rem;"></i> --}}
                                             <h2 class="ms-1" style="margin-top: 5px; font-weight: bolder; font-size: 3rem">{{ count($seniorCount) }}</h2>
                                         </div>
                                         <div class="ms-3">
@@ -149,7 +148,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- Baby Tab --}}
 
@@ -237,27 +236,6 @@
 
         const myChart = new Chart(ctx, {
             type: 'line',
-            // data: {
-            //     labels: pData.label,
-            //     datasets: [{
-            //         label: 'Pregnant Residents',
-            //         data: pData.data,
-            //         backgroundColor: [
-            //             'rgba(255, 99, 132, 0.2)'
-            //         ],
-            //         borderColor: [
-            //             'rgba(255, 99, 132, 1)'
-            //         ],
-            //         borderWidth: 1
-            //     }]
-            // },
-            // options: {
-            //     scales: {
-            //         y: {
-            //             beginAtZero: true
-            //         }
-            //     }
-            // }
              data: {
                 labels: pData.label,
                 datasets: [{
@@ -281,83 +259,42 @@
                 }
             }
         });
-        const sctx = document.getElementById('smyChart').getContext('2d');
+        // const sctx = document.getElementById('smyChart').getContext('2d');
 
-        var sData = JSON.parse(`<?php echo $seniorData['chart_data']; ?>`);
+        // var sData = JSON.parse(`<?php echo $seniorData['chart_data']; ?>`);
 
-        const smyChart = new Chart(sctx, {
-            type: 'line',
-            // data: {
-            //     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            //     datasets: [{
-            //         label: 'Senior Residents',
-            //         data: [12, 19, 3, 5, 2, 3],
-            //         backgroundColor: [
-            //             'rgba(75, 192, 192, 0.2)'
-            //         ],
-            //         borderColor: [
-            //             'rgba(75, 192, 192, 1)'
-            //         ],
-            //         borderWidth: 1
-            //     }]
-            // },
-            // options: {
-            //     scales: {
-            //         y: {
-            //             beginAtZero: true
-            //         }
-            //     }
-            // }
-            data: {
-                labels: sData.label,
-                datasets: [{
-                    label: 'Senior Citizen',
-                    data: sData.data,
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(75, 192, 192, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            }
-        });
+        // const smyChart = new Chart(sctx, {
+        //     type: 'line',
+        //     data: {
+        //         labels: sData.label,
+        //         datasets: [{
+        //             label: 'Senior Citizen',
+        //             data: sData.data,
+        //             backgroundColor: [
+        //                 'rgba(75, 192, 192, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(75, 192, 192, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         responsive: true,
+        //         plugins: {
+        //             legend: {
+        //                 position: 'bottom'
+        //             }
+        //         }
+        //     }
+        // });
+
         const bctx = document.getElementById('bmyChart').getContext('2d');
 
         var bData = JSON.parse(`<?php echo $babyData['chart_data']; ?>`);
 
         const bmyChart = new Chart(bctx, {
             type: 'line',
-            // data: {
-            //     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            //     datasets: [{
-            //         label: 'Baby Residents',
-            //         data: [12, 19, 3, 5, 2, 3],
-            //         backgroundColor: [
-            //             'rgba(54, 162, 235, 0.5)'
-            //         ],
-            //         borderColor: [
-            //             'rgba(54, 162, 235, 1)'
-            //         ],
-            //         borderWidth: 1
-            //     }]
-            // },
-            // options: {
-            //     scales: {
-            //         y: {
-            //             beginAtZero: true
-            //         }
-            //     }
-            // }
             data: {
                 labels: bData.label,
                 datasets: [{

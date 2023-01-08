@@ -67,6 +67,7 @@ Route::get('/residents/add', [App\Http\Controllers\ResidentController::class, 'a
     Route::get('/residents/baby/edit/{id}', [App\Http\Controllers\BabyController::class, 'edit'])->name('baby.edit')->middleware('auth');
     Route::post('/edit-store-baby', [App\Http\Controllers\BabyController::class, 'edit_store'])->name('baby.edit-store')->middleware('auth');
     Route::get('/baby/delete/{id}', [App\Http\Controllers\BabyController::class, 'delete'] )->name('baby.delete')->middleware('auth');
+
 // End of Resident
 
 // Check-up Forms
@@ -81,6 +82,25 @@ Route::get('/checkup-forms', [App\Http\Controllers\FormController::class, 'index
     Route::post('/checkup-forms/prenatal/register', [App\Http\Controllers\FormController::class, 'register'])->name('checkup-forms.prenatal.register')->middleware('auth');
     Route::post('/checkup-forms/prenatal/update', [App\Http\Controllers\FormController::class, 'update'])->name('checkup-forms.prenatal.update')->middleware('auth');
     Route::get('/checkup-forms/prenatal/delete/{id}', [App\Http\Controllers\FormController::class, 'delete'])->name('checkup-forms.prenatal.delete')->middleware('auth');
+
+    // Daily Consultation
+    Route::get('/checkup-forms/daily/add', [App\Http\Controllers\FormController::class, 'daily_add'])->name('checkup-forms.daily.add')->middleware('auth');
+    Route::get('/checkup-forms/daily/index', [App\Http\Controllers\FormController::class, 'daily_index'])->name('checkup-forms.daily.index')->middleware('auth');
+    Route::get('/checkup-forms/daily/show/{id}', [App\Http\Controllers\FormController::class, 'daily_show'])->name('checkup-forms.daily.show')->middleware('auth');
+    Route::get('/checkup-forms/daily/edit/{id}', [App\Http\Controllers\FormController::class, 'daily_edit'])->name('checkup-forms.daily.edit')->middleware('auth');
+    Route::post('/checkup-forms/daily/register', [App\Http\Controllers\FormController::class, 'daily_register'])->name('checkup-forms.daily.register')->middleware('auth');
+    Route::post('/checkup-forms/daily/update', [App\Http\Controllers\FormController::class, 'daily_update'])->name('checkup-forms.daily.update')->middleware('auth');
+    Route::get('/checkup-forms/daily/delete/{id}', [App\Http\Controllers\FormController::class, 'daily_delete'])->name('checkup-forms.daily.delete')->middleware('auth');
+
+    // Prenatal 
+    Route::get('/checkup-forms/baby/list', [App\Http\Controllers\FormController::class, 'baby_list'])->name('checkup-forms.baby.list')->middleware('auth');
+    Route::get('/checkup-forms/baby/add/{id}', [App\Http\Controllers\FormController::class, 'baby_add'])->name('checkup-forms.baby.add')->middleware('auth');
+    Route::get('/checkup-forms/baby/index', [App\Http\Controllers\FormController::class, 'baby_index'])->name('checkup-forms.baby.index')->middleware('auth');
+    Route::get('/checkup-forms/baby/show/{id}', [App\Http\Controllers\FormController::class, 'baby_show'])->name('checkup-forms.baby.show')->middleware('auth');
+    Route::get('/checkup-forms/baby/edit/{id}', [App\Http\Controllers\FormController::class, 'baby_edit'])->name('checkup-forms.baby.edit')->middleware('auth');
+    Route::post('/checkup-forms/baby/register', [App\Http\Controllers\FormController::class, 'baby_register'])->name('checkup-forms.baby.register')->middleware('auth');
+    Route::post('/checkup-forms/baby/update', [App\Http\Controllers\FormController::class, 'baby_update'])->name('checkup-forms.baby.update')->middleware('auth');
+    Route::get('/checkup-forms/baby/delete/{id}', [App\Http\Controllers\FormController::class, 'baby_delete'])->name('checkup-forms.baby.delete')->middleware('auth');
 
 // End of Check-up Forms
 

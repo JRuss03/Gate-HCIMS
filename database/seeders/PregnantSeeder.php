@@ -24,11 +24,11 @@ class PregnantSeeder extends Seeder
                 'mother_name' => $faker->name($gender = 'female') , 
                 'age' => rand(16, 40),
                 'numberofchildren' => rand(1, 7),
-                'mensdate' => $faker->dateTimeThisYear($max = 'now', $timezone = null),
-                'prob_bdate' => $faker->dateTimeThisYear($max = 'now', $timezone = null),
+                'mensdate' => $faker->dateTimeBetween($startDate = '-1 year', $endDate = 'now', $timezone = null),
+                'prob_bdate' => $faker->dateTimeBetween($startDate = '-1 year', $endDate = 'now', $timezone = null) ,
                 'problem' => rand(1, 7),
                 'children' => rand(1, 7),
-                'created' =>  $faker->dateTimeBetween($startDate = '-3 years', $endDate = 'now', $timezone = null) 
+                'created' =>  $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null) 
             ]);
         }
     }

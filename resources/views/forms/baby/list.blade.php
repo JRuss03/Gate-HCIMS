@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'New Prenatal Form')
+@section('title', 'New Infanct Checkup')
 
 @section('content')
 
@@ -10,7 +10,7 @@
                 <div class="card-header">
                     <span class="d-flex align-items-center auth-card-header">
                         <i class='bx bxs-file'></i>
-                        <h6 style="margin-top: 5px;"><strong>New Prenatal Form - Select Resident</strong></h6>
+                        <h6 style="margin-top: 5px;"><strong>New Infanct Checkup - Select Infant</strong></h6>
                     </span>
                 </div>
                 <div class="card-body">
@@ -25,13 +25,13 @@
                         
                         <tbody>
                        
-                        @foreach ($pregnant as $preg)
+                        @foreach ($babies as $baby)
                             <tr>
                                 <td class="td-content">
-                                {{ $preg->mother_name }}
+                                {{ $baby->name }}
                                 </td>
                                 <td>
-                                    <a href="{{ route('checkup-forms.prenatal.add',$preg->id) }}">
+                                    <a href="{{ route('checkup-forms.baby.add', $baby->id) }}">
                                         <i class='bx bx-check btn-table btn-edit' data-tippy-content="Select this resident" data-tippy-arrow="false"></i>
                                     </a>
                                 </td>

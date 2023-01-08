@@ -21,6 +21,30 @@
                                     <i class='bx bx-file'></i>
                                 </div>
                                 <div class="ms-3">
+                                    <h6><strong>Daily Consultation</strong></h6>
+                                    <span class="d-flex align-items-center">
+                                        <i class='bx bx-user'></i>
+                                        <span class="ms-2">All Residents</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="{{ route('checkup-forms.daily.index') }}">
+                                    <i class='bx bx-list-ul btn-table btn-edit' data-tippy-content="Index" data-tippy-arrow="false"></i>
+                                </a>
+                                <a href="{{ route('checkup-forms.daily.add') }}" class="ms-3">
+                                    <i class='bx bx-plus btn-table btn-edit' data-tippy-content="Add New Form" data-tippy-arrow="false"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="file-icon">
+                                    <i class='bx bx-file'></i>
+                                </div>
+                                <div class="ms-3">
                                     <h6><strong>Prenatal Checkup</strong></h6>
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-user'></i>
@@ -38,30 +62,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="form-row">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <div class="file-icon">
-                                    <i class='bx bx-file'></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h6><strong>Check Form</strong></h6>
-                                    <span class="d-flex align-items-center">
-                                        <i class='bx bx-user'></i>
-                                        <span class="ms-2">Senior Residents</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="">
-                                    <i class='bx bx-list-ul btn-table btn-edit' data-tippy-content="Index" data-tippy-arrow="false"></i>
-                                </a>
-                                <a href="" class="ms-3">
-                                    <i class='bx bx-plus btn-table btn-edit' data-tippy-content="Add New Form" data-tippy-arrow="false"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="form-row">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
@@ -69,23 +69,23 @@
                                     <i class='bx bx-file'></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6><strong>Check Form</strong></h6>
+                                    <h6><strong>Infant Checkup</strong></h6>
                                     <span class="d-flex align-items-center">
                                         <i class='bx bx-user'></i>
-                                        <span class="ms-2">Baby Residents</span>
+                                        <span class="ms-2">Infant Residents</span>
                                     </span>
                                 </div>
                             </div>
                             <div>
-                                <a href="">
+                                <a href="{{ route('checkup-forms.baby.index') }}">
                                     <i class='bx bx-list-ul btn-table btn-edit' data-tippy-content="Index" data-tippy-arrow="false"></i>
                                 </a>
-                                <a href="" class="ms-3">
+                                <a href="{{ route('checkup-forms.baby.list') }}" class="ms-3">
                                     <i class='bx bx-plus btn-table btn-edit' data-tippy-content="Add New Form" data-tippy-arrow="false"></i>
                                 </a>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
