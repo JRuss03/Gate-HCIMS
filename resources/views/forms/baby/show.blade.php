@@ -132,7 +132,7 @@
                             </span>
                             <span class="d-flex align-items-center">
                                 {{-- <i class='bx bx-phone'></i> --}}
-                                <span class="">Reason: {{ $immunization->reaction }}</span>
+                                <span class="">Reaction: {{ $immunization->reaction }}</span>
                             </span>
                         </div>
                         <div class="col-lg-6">
