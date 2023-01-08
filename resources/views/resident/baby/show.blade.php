@@ -83,25 +83,32 @@
                                     <i class='bx bxs-file' style="font-size: 2rem; margin-top: 3px;"></i>
                                     <h6 class="ms-2"><strong>Check-up Forms</strong></h6>
                                 </span>
-                                <a href="" class="btn-add d-flex align-items-center">
+                                <a href="{{ route('checkup-forms.baby.add',$baby->id) }}" class="btn-add d-flex align-items-center">
                                     <i class='bx bx-plus'></i>
                                     Add New Form
                                 </a>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="d-flex align-items-center">
-                                <div class="file-icon">
-                                    <i class='bx bx-file'></i>
+                            @foreach ($forms as $form)
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="file-icon">
+                                            <i class='bx bx-file'></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h6><strong>Check-up Form #{{ $form->id }}</strong></h6>
+                                            <span class="d-flex align-items-center">
+                                                <i class='bx bx-calendar'></i>
+                                                <span class="ms-2">{{ \Carbon\Carbon::parse($form->date)->format('M. d, Y')}}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('checkup-forms.baby.show', $form->id) }}">
+                                        <i class='bx bx-show btn-table btn-edit' data-tippy-content="View" data-tippy-arrow="false"></i>
+                                    </a>
                                 </div>
-                                <div class="ms-3">
-                                    <h6><strong>Check Form</strong></h6>
-                                    <span class="d-flex align-items-center">
-                                        <i class='bx bx-calendar'></i>
-                                        <span class="ms-2">Mar. 22, 2022</span>
-                                    </span>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

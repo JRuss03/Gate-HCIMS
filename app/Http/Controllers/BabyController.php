@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\Baby;
 use App\Models\Senior;
 use App\Models\Resident;
+use App\Models\BabyCheckup;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +16,9 @@ class BabyController extends Controller
     public function show($id)
     {
         $baby = Baby::findOrFail($id);
+        $forms = BabyCheckup::where('baby_id', $id)->get();
 
-        return view('resident.baby.show', compact('baby'));
+        return view('resident.baby.show', compact('baby', 'forms'));
     }
 
     public function register(Request $request) {
